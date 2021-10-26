@@ -31,7 +31,7 @@ function RateMovies() {
     }, []);
 
     return (
-        <div>
+        <div style={{backgroundImage: "linear-gradient(to right, red , lightgreen)"}}>
             <p>Rate Movies Here</p>
             <div> {popularMovies[30]?.movieTitle} </div>
             <img src = {`${popularMovies[30]?.moviePoster}`} />
