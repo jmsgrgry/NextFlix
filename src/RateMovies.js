@@ -90,7 +90,7 @@ function RateMovies() {
 
 
     return (
-        <div>
+        <div style={{backgroundImage: "linear-gradient(to right, red , lightgreen)"}}>
             <p>Rate Movies Here</p>
             <div> {movie?.movieTitle} </div>
             <div> {movie?.movieYear} </div>

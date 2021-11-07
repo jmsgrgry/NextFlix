@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+.sign-in, .sign-out{
+  margin-top: 50px;
+  background-color: black; /* Green */
+  border: 1px solid gray;
+  color: lightgray;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+.sign-out{
+  margin-left: 20px;
+}
+
+.sign-in:hover, .sign-out:hover{
+  color: red;
+  font-weight: 600;
+}
