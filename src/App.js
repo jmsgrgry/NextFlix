@@ -4,8 +4,7 @@ import './App.css';
 import SignIn from './SignIn';
 import SignOut from './SignOut';
 import RateMovies from './RateMovies';
-// import PreLoader from './PreLoader';
-
+import Navbar from './Navbar/NavbarElements';
 
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
@@ -45,6 +44,7 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
       <header>
         <img src={logo} />
         <SignOut />

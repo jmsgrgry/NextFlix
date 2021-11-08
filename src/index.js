@@ -13,7 +13,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-// const rootElement ㄴ= document.getElementById("root");
+// const rootElement = document.getElementById("root");
 // ReactDOM.render(<App />, rootElement);
 
 // If you want to start measuring performance in your app, pass a function
