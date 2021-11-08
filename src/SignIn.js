@@ -18,11 +18,17 @@ const auth = firebase.auth();
 
 function SignIn() {
 
-    const signInWithGoogle = () => {
+    function signInWithGoogle() {
       const provider = new firebase.auth.GoogleAuthProvider();
-      auth.signInWithPopup(provider);
+      auth.signInWithPopup(provider).then((result) => {
+
+        var db = firebase.firestore();
+
+        db.collection('users').doc(result.user.uid).set({}, {merge: true});
+    })
+    .catch((error) => alert(error));;
     }
-  
+
     return (
       <>
         <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
