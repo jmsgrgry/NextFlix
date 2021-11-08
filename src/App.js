@@ -5,6 +5,14 @@ import SignIn from './SignIn';
 import SignOut from './SignOut';
 import RateMovies from './RateMovies';
 import Navbar from './Navbar/NavbarElements';
+// import PreLoader from './PreLoader';
+
+import Menu from './Menu/Menu';
+import UserPlaylist from './Menu/UserPlaylist';
+import SuggestedMovies from './Menu/SuggestedMovies';
+import './Menu/Menu.css';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
@@ -43,18 +51,35 @@ function App() {
   }
 
   return (
+    <Router>
     <div className="App">
       <Navbar />
       <header>
-        <img src={logo} />
+        <img className="logo_main" src={logo} />
         <SignOut />
       </header>
 
       <section>
-        {user ? <RateMovies /> : <SignIn />}
+        <Switch>
+          <Route exact path="/">
+            {/* <Link to="/Menu"><button class="MenuButton" role="button">Menu</button></Link> */}
+            {user ? <RateMovies /> : <SignIn />}
+          </Route>
+          <Route exact path="/Menu">
+            {user ? <Menu /> : <SignIn />}
+          </Route>
+          <Route exact path="/UserPlaylist">
+            {user ? <UserPlaylist /> : <SignIn />}
+            <div id = "playlist"></div>
+          </Route>
+          <Route exact path="/SuggestedMovies">
+            {user ? <SuggestedMovies /> : <SignIn />}
+          </Route>
+        </Switch>
       </section>
 
     </div>
+    </Router>
   );
 }
 
