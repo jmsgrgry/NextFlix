@@ -90,10 +90,12 @@ function RateMovies() {
 
 
     return (
-        <div style={{backgroundImage: "linear-gradient(to right, red , lightgreen)"}}>
+        // <div style={{backgroundImage: "linear-gradient(to right, red , lightgreen)"}}></div>
+        <div>
             <p>Rate Movies Here</p>
-            <div> {movie?.movieTitle} </div>
-            <div> {movie?.movieYear} </div>
+            <div className="rate_title"> {movie?.movieTitle} </div>
+            <div> Genre: {movie?.movieGenre} </div>
+            <div> Release Year: {movie?.movieYear} </div>
             <br/>
             <button onClick={likedMovie}> Like</button>
             <button onClick={dislikedMovie}> Disike</button>
