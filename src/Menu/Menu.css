@@ -1,0 +1,103 @@
+/* image css https://codepen.io/jmldias/pen/efvGx */
+#MenuTitle {
+    color:white;
+  }
+
+.MenuButton {
+    background: linear-gradient(to bottom right, black, black);
+    border: 1;
+    width: 200px;
+    border-radius: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+}
+  
+.MenuButton:not([disabled]):focus {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem red, .125rem .125rem 1rem red;
+}
+  
+.MenuButton:not([disabled]):hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem red, .125rem .125rem 1rem red;
+}
+
+.desc
+{
+  text-align: center;
+  font-weight: normal;
+  width: 100%;
+  margin: 0px;
+  visibility:hidden;
+  color: white;
+}
+
+.playlistimg:hover .desc {
+  visibility:visible;
+}
+.playlistimg img {max-width:100%;}
+.playlistimg{
+  margin: 5% 5% 5% 5%;
+  padding:5px;
+  box-sizing:border-box;
+  background:linear-gradient(to bottom right, red, black);
+  line-height:0px;
+  height: auto;
+  width: 15%;
+  float: left;
+  text-align: center;
+  -webkit-transition:all 0.5s ease;
+  -moz-transition:all 0.5s ease; 
+  -o-transition:all 0.5s ease; 
+  transition:all 0.5s ease;
+  border-radius:4px;
+}	
+.playlistimg:hover{line-height:30px;font-size:16px;}
+.playlistimg img
+{
+  display: inline-block;
+  margin: 3px;
+}
+
+@keyframes bgfade
+{
+0%   {opacity:0;}
+100% {opacity:1;}
+}
+
+@-webkit-keyframes bgfade
+{
+0%   {opacity:0;}
+100% {opacity:1;}
+}
+
+.TopSuggested {
+  margin: 5% 5% 5% 5%;
+}
+.TopSuggested img{
+  width:20%;
+}
+
+.wrapper img { 
+  box-shadow: 1px 1px 10px #999; 
+  margin: 2px;
+  height: 200px;
+  width: 135px;
+  cursor: pointer;
+  display:inline-block;
+  *display:inline;
+  *zoom:1;
+  vertical-align:top;
+}
