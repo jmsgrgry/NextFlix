@@ -24,6 +24,9 @@
     -webkit-user-select: none;
     touch-action: manipulation;
     white-space: nowrap;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1.5%;
 }
   
 .MenuButton:not([disabled]):focus {
@@ -32,20 +35,9 @@
   
 .MenuButton:not([disabled]):hover {
     box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem red, .125rem .125rem 1rem red;
+    color: lightcoral;
 }
 
-.desc
-{
-  text-align: center;
-  font-weight: normal;
-  width: 100%;
-  height: auto;
-  margin-bottom: 20px;
-  padding-top: 20px;
-  /* visibility:hidden; */
-  color: white;
-  font-weight: 600;
-}
 .btn_add{
   margin-top: 5px;
   margin-bottom: 5px;
@@ -56,21 +48,23 @@
 }
 .btn_add:hover{
   font-weight: 500;
-  border: 1px solid yellow;
+  border: 1px solid red;
 }
 
-.playlistimg:hover .desc {
+.suggested-option:hover .desc {
   visibility:visible;
 }
-.playlistimg img {max-width:100%;}
-.playlistimg{
-  margin: 5% 5% 5% 5%;
+
+.suggested-option img {max-width:100%;}
+
+.suggested-option{
+  margin: 2% 2% 2% 2%;
   padding:5px;
   box-sizing:border-box;
   background:linear-gradient(to bottom right, red, black);
   line-height:0px;
   height: auto;
-  width: 15%;
+  width: 21%;
   float: left;
   text-align: center;
   -webkit-transition:all 0.5s ease;
@@ -79,11 +73,41 @@
   transition:all 0.5s ease;
   border-radius:4px;
 }	
-.playlistimg:hover{line-height:30px;font-size:16px;}
-.playlistimg img
-{
+
+.suggested-option:hover{line-height:30px;font-size:16px;}
+
+.suggested-option img{
   display: inline-block;
   margin: 3px;
+}
+
+.suggested-option-poster{
+  width: 93%;
+  height: auto;
+  border-radius: 3%;
+  padding-top: 2%;
+}
+
+.suggested-title{
+  text-align: center;
+  width: auto;
+  height: auto;
+  padding: 7% 3% 0% 3%;
+  color: white;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.desc{
+  text-align: center;
+  font-weight: normal;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  visibility:hidden;
+  color: white;
+  font-weight: 600;
 }
 
 @keyframes bgfade
@@ -100,9 +124,38 @@
 
 .TopSuggested {
   margin: 5% 5% 5% 5%;
+  position: relative;
 }
-.TopSuggested img{
-  width:20%;
+
+.top-suggested-poster{
+  width: 20%;
+  height: auto;
+  border-radius: 3%;
+  margin-top: 2%;
+  position: relative;
+  z-index: 1;
+}
+
+.top-suggested-filter{
+  position:absolute;
+  height:100%;
+  width:100%;
+  opacity:0.6;
+  z-index: 0;
+  top: 0;
+  background-color:#510000;
+}
+
+.top-sugested-title{
+  text-align: center;
+  width: auto;
+  height: auto;
+  padding: 1.5% 1.5% 1.5% 1.5%;
+  color: white;
+  font-weight: 700;
+  line-height: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .wrapper{
