@@ -60,7 +60,6 @@ function App() {
       <section>
         <Switch>
           <Route exact path="/">
-            <Link to="/Menu"><button class="MenuButton" role="button">Menu</button></Link>
             {user ? <RateMovies /> : <SignIn />}
           </Route>
           <Route exact path="/Menu">
