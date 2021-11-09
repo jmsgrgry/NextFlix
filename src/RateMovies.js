@@ -3,6 +3,9 @@ import './App.css';
 import firebase from 'firebase/compat/app';
 import 'firebase/database';
 import 'firebase/firestore';
+import { Link } from 'react-router-dom';
+import './Menu/Menu.css';
+import Menu from './Menu/Menu';
 
 function RateMovies() {
 
@@ -96,6 +99,9 @@ function RateMovies() {
             <div className="rate_title"> {movie?.movieTitle} </div>
             <div> Genre: {movie?.movieGenre} </div>
             <div> Release Year: {movie?.movieYear} </div>
+            <Link to="/Menu"><button class="MenuButton" role="button">Menu</button></Link>
+            <div> {movie?.movieTitle} </div>
+            <div> {movie?.movieYear} </div>
             <br/>
             <button onClick={likedMovie}> Like</button>
             <button onClick={dislikedMovie}> Disike</button>
