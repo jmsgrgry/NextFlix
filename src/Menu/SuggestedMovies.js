@@ -70,7 +70,7 @@ const SuggestedMovies = () => {
     }
     function addMovie1() {
 
-        var genres = movie.movieGenre.split(',');
+        var genres = movie?.movieGenre?.split(',');
 
         db.collection('users').doc(user_id).update({
             "Added.defaultPlaylist": firebase.firestore.FieldValue.arrayUnion({
@@ -92,7 +92,7 @@ const SuggestedMovies = () => {
     }
     function addMovie2() {
 
-        var genres = movie.movieGenre.split(',');
+        var genres = movie?.movieGenre?.split(',');
 
         db.collection('users').doc(user_id).update({
             "Added.defaultPlaylist": firebase.firestore.FieldValue.arrayUnion({
@@ -114,7 +114,7 @@ const SuggestedMovies = () => {
     }
     function addMovie3() {
 
-        var genres = movie.movieGenre.split(',');
+        var genres = movie?.movieGenre?.split(',');
 
         db.collection('users').doc(user_id).update({
             "Added.defaultPlaylist": firebase.firestore.FieldValue.arrayUnion({
@@ -136,7 +136,7 @@ const SuggestedMovies = () => {
     }
     function addMovie4() {
 
-        var genres = movie.movieGenre.split(',');
+        var genres = movie?.movieGenre?.split(',');
 
         db.collection('users').doc(user_id).update({
             "Added.defaultPlaylist": firebase.firestore.FieldValue.arrayUnion({
