@@ -4,6 +4,7 @@ import './App.css';
 import SignIn from './SignIn';
 import SignOut from './SignOut';
 import RateMovies from './RateMovies';
+import Navbar from './Navbar/NavbarElements';
 // import PreLoader from './PreLoader';
 
 import Menu from './Menu/Menu';
@@ -52,14 +53,16 @@ function App() {
   return (
     <Router>
     <div className="App">
+      <Navbar />
       <header>
-        <img src={logo} />
+        <img className="logo_main" src={logo} />
         <SignOut />
       </header>
 
       <section>
         <Switch>
           <Route exact path="/">
+            {/* <Link to="/Menu"><button class="MenuButton" role="button">Menu</button></Link> */}
             {user ? <RateMovies /> : <SignIn />}
           </Route>
           <Route exact path="/Menu">
