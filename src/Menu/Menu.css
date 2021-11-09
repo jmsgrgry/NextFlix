@@ -39,9 +39,24 @@
   text-align: center;
   font-weight: normal;
   width: 100%;
-  margin: 0px;
-  visibility:hidden;
+  height: auto;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  /* visibility:hidden; */
   color: white;
+  font-weight: 600;
+}
+.btn_add{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: whitesmoke;
+  border: 1px solid lightgray;
+  background-color: inherit;
+}
+.btn_add:hover{
+  font-weight: 500;
+  border: 1px solid yellow;
 }
 
 .playlistimg:hover .desc {
@@ -90,6 +105,16 @@
   width:20%;
 }
 
+.wrapper{
+  margin-top: 40px;
+}
+.wrapper #MenuTitle{
+  color: gray;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-top: 1px solid gray;
+}
+
 .wrapper img { 
   box-shadow: 1px 1px 10px #999; 
   margin: 2px;
@@ -100,4 +125,6 @@
   *display:inline;
   *zoom:1;
   vertical-align:top;
+  /* margin-bottom:50px; */
+  margin: 0 15px 50px 15px ;
 }

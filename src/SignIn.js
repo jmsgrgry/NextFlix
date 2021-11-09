@@ -32,7 +32,7 @@ function SignIn() {
     return (
       <>
         <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-        <p>Sign in to find your next favorite movie!</p>
+        <p className="sign-in-cmt">Sign in to find your next favorite movie!</p>
       </>
     )
   
