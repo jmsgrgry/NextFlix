@@ -30,10 +30,9 @@ function SignIn() {
     .catch((error) => alert(error));;
     }
 
-    return (
+    return !auth.currentUser && (
       <>
         <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-        <p className="sign-in-cmt">Sign in to find your next favorite movie!</p>
       </>
     )
   

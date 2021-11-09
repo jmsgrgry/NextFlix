@@ -37,8 +37,22 @@
   }
 }
 
-.sign-in, .sign-out{
-  /* margin-top: 50px; */
+.sign-in{
+  background-color: transparent;
+  position: absolute;
+  right: 20px;
+  border: none;
+  color: lightgray;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+
+.sign-out{
+  background-color: transparent;
+  margin-left: 20px;
   border: 1px solid gray;
   color: lightgray;
   padding: 15px 32px;
@@ -48,22 +62,21 @@
   font-size: 18px;
 }
 
-.sign-in{
-    margin-top: 50px;
-    background-color: black;
-}
-.sign-out{
-  background-color: transparent;
-  float: left;
-  margin-left: 20px;
-
-}
-
 .sign-in:hover, .sign-out:hover{
   color: red;
   font-weight: 600;
 }
+
 .logo_main{
   margin-left: -100px;
   margin-bottom: 30px;
+}
+
+.video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
 }

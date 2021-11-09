@@ -21,7 +21,8 @@ import 'firebase/compat/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
-import logo from './assets/NextFlix-logo.png';
+import landingVideo from './assets/landing-video.mp4';
+import landingImage from './assets/landing-page.png';
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
@@ -55,25 +56,23 @@ function App() {
     <div className="App">
       <Navbar />
       <header>
-        {/* <img className="logo_main" src={logo} /> */}
-        {/* <SignOut /> */}
       </header>
 
       <section>
         <Switch>
           <Route exact path="/">
             {/* <Link to="/Menu"><button class="MenuButton" role="button">Menu</button></Link> */}
-            {user ? <RateMovies /> : <SignIn />}
+            {user ? <RateMovies /> : <video autoPlay playsinline poster={landingImage} src={landingVideo}></video>}
           </Route>
           <Route exact path="/Menu">
-            {user ? <Menu /> : <SignIn />}
+            {user ? <Menu /> : <video autoPlay playsinline poster={landingImage} src={landingVideo}></video>}
           </Route>
           <Route exact path="/UserPlaylist">
-            {user ? <UserPlaylist /> : <SignIn />}
+            {user ? <UserPlaylist /> : <video autoPlay playsinline poster={landingImage} src={landingVideo}></video>}
             <div id = "playlist"></div>
           </Route>
           <Route exact path="/SuggestedMovies">
-            {user ? <SuggestedMovies /> : <SignIn />}
+            {user ? <SuggestedMovies /> : <video autoPlay playsinline poster={landingImage} src={landingVideo}></video>}
           </Route>
         </Switch>
       </section>
