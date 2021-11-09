@@ -17,15 +17,15 @@ const UserPlaylist = () => {
     if (doc.exists) {
 
         var html = "<div class='wrapper'><h1 id='MenuTitle'>Liked Movies</h1>"
-        for (var i = 0; i < doc.data().Rated.liked.length; i++) {
-            html += "<img src=" + doc.data().Rated.liked[i].moviePoster + "/>"
+        for (var i = 0; i < doc.data().Rated?.liked?.length; i++) {
+            html += "<img src=" + doc.data().Rated?.liked[i].moviePoster + "/>"
         }
         html += "<h1 id='MenuTitle'>DisLiked Movies</h1>"
-        for (var i = 0; i < doc.data().Rated.disliked.length; i++) {
+        for (var i = 0; i < doc.data().Rated?.disliked?.length; i++) {
             html += "<img src=" + doc.data().Rated.disliked[i].moviePoster + "/>"
         }
         html += "<h1 id='MenuTitle'>Added Movies</h1>"
-        for (var i = 0; i < doc.data().Added.defaultPlaylist.length; i++) {
+        for (var i = 0; i < doc.data().Added?.defaultPlaylist?.length; i++) {
             html += "<img src=" + doc.data().Added.defaultPlaylist[i].moviePoster + "/>"
         }
         html += "</div>"

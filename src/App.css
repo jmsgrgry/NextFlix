@@ -38,8 +38,7 @@
 }
 
 .sign-in, .sign-out{
-  margin-top: 50px;
-  background-color: black; /* Green */
+  /* margin-top: 50px; */
   border: 1px solid gray;
   color: lightgray;
   padding: 15px 32px;
@@ -48,7 +47,13 @@
   display: inline-block;
   font-size: 18px;
 }
+
+.sign-in{
+    margin-top: 50px;
+    background-color: black;
+}
 .sign-out{
+  background-color: transparent;
   float: left;
   margin-left: 20px;
 
