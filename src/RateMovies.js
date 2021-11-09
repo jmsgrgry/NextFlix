@@ -99,7 +99,6 @@ function RateMovies() {
             <div className="rate_title"> {movie?.movieTitle} </div>
             <div> Genre: {movie?.movieGenre} </div>
             <div> Release Year: {movie?.movieYear} </div>
-            <Link to="/Menu"><button class="MenuButton" role="button">Menu</button></Link>
             <div> {movie?.movieTitle} </div>
             <div> {movie?.movieYear} </div>
             <br/>
