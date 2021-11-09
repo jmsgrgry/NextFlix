@@ -24,7 +24,18 @@ const SuggestedMovies = () => {
                     moviePoster: data.movie_poster, 
                     movieYear: data.movie_year,
                     movieGenre: data.movie_genre, 
-                    movieRating: data.imdb_rating
+                    movieRating: data.imdb_rating,
+                    director: data.director,
+                    gross: data.gross,
+                    imdbLink: data.imdb_link,
+                    metaScore: data.meta_score,
+                    numVotes: data.no_of_votes,
+                    overview: data.overview,
+                    runtime: data.Runtime,
+                    star1: data.star1,
+                    star2: data.star2,
+                    star3: data.star3,
+                    star4: data.star4,
                 })
             });
             setPopularMovies([...popularMovies, ...newArray])
@@ -46,6 +57,8 @@ const SuggestedMovies = () => {
     var db = firebase.firestore();
     var user_id = auth.currentUser.uid;
 
+    console.log(movie);
+
     function addMovie0() {
 
         var genres = movie.movieGenre.split(',');
@@ -58,6 +71,17 @@ const SuggestedMovies = () => {
                 movieYear: movie.movieYear,
                 movieGenre: movie.movieGenre, 
                 movieRating: movie.movieRating,
+                director: movie.director,
+                gross: movie.gross,
+                imdbLink: movie.imdbLink,
+                metaScore: movie.metaScore,
+                numVotes: movie.numVotes,
+                overview: movie.overview,
+                runtime: movie.runtime,
+                star1: movie.star1,
+                star2: movie.star2,
+                star3: movie.star3,
+                star4: movie.star4,
              }),
              [`Added.genres.${genres}`]: firebase.firestore.FieldValue.increment(1),
         })
@@ -80,6 +104,17 @@ const SuggestedMovies = () => {
                 movieYear: movie1.movieYear,
                 movieGenre: movie1.movieGenre, 
                 movieRating: movie1.movieRating,
+                director: movie1.director,
+                gross: movie1.gross,
+                imdbLink: movie1.imdbLink,
+                metaScore: movie1.metaScore,
+                numVotes: movie1.numVotes,
+                overview: movie1.overview,
+                runtime: movie1.runtime,
+                star1: movie1.star1,
+                star2: movie1.star2,
+                star3: movie1.star3,
+                star4: movie1.star4,
              }),
              [`Added.genres.${genres}`]: firebase.firestore.FieldValue.increment(1),
         })
@@ -102,6 +137,17 @@ const SuggestedMovies = () => {
                 movieYear: movie2.movieYear,
                 movieGenre: movie2.movieGenre, 
                 movieRating: movie2.movieRating,
+                director: movie2.director,
+                gross: movie2.gross,
+                imdbLink: movie2.imdbLink,
+                metaScore: movie2.metaScore,
+                numVotes: movie2.numVotes,
+                overview: movie2.overview,
+                runtime: movie2.runtime,
+                star1: movie2.star1,
+                star2: movie2.star2,
+                star3: movie2.star3,
+                star4: movie2.star4,
              }),
              [`Added.genres.${genres}`]: firebase.firestore.FieldValue.increment(1),
         })
@@ -124,6 +170,17 @@ const SuggestedMovies = () => {
                 movieYear: movie3.movieYear,
                 movieGenre: movie3.movieGenre, 
                 movieRating: movie3.movieRating,
+                director: movie3.director,
+                gross: movie3.gross,
+                imdbLink: movie3.imdbLink,
+                metaScore: movie3.metaScore,
+                numVotes: movie3.numVotes,
+                overview: movie3.overview,
+                runtime: movie3.runtime,
+                star1: movie3.star1,
+                star2: movie3.star2,
+                star3: movie3.star3,
+                star4: movie3.star4,
              }),
              [`Added.genres.${genres}`]: firebase.firestore.FieldValue.increment(1),
         })
@@ -146,6 +203,17 @@ const SuggestedMovies = () => {
                 movieYear: movie4.movieYear,
                 movieGenre: movie4.movieGenre, 
                 movieRating: movie4.movieRating,
+                director: movie4.director,
+                gross: movie4.gross,
+                imdbLink: movie4.imdbLink,
+                metaScore: movie4.metaScore,
+                numVotes: movie4.numVotes,
+                overview: movie4.overview,
+                runtime: movie4.runtime,
+                star1: movie4.star1,
+                star2: movie4.star2,
+                star3: movie4.star3,
+                star4: movie4.star4,
              }),
              [`Added.genres.${genres}`]: firebase.firestore.FieldValue.increment(1),
         })

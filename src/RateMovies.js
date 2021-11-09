@@ -29,7 +29,18 @@ function RateMovies() {
                     moviePoster: data.movie_poster, 
                     movieYear: data.movie_year,
                     movieGenre: data.movie_genre, 
-                    movieRating: data.imdb_rating
+                    movieRating: data.imdb_rating,
+                    director: data.director,
+                    gross: data.gross,
+                    imdbLink: data.imdb_link,
+                    metaScore: data.meta_score,
+                    numVotes: data.no_of_votes,
+                    overview: data.overview,
+                    runtime: data.Runtime,
+                    star1: data.star1,
+                    star2: data.star2,
+                    star3: data.star3,
+                    star4: data.star4,
                 })
             });
 
@@ -40,6 +51,7 @@ function RateMovies() {
 
     var index = Math.floor(Math.random() * (1000 + 1));
     var movie = popularMovies[index];
+    console.log(movie);
 
     const auth = firebase.auth();
     var db = firebase.firestore();
@@ -57,6 +69,17 @@ function RateMovies() {
                 movieYear: movie.movieYear,
                 movieGenre: movie.movieGenre, 
                 movieRating: movie.movieRating,
+                director: movie.director,
+                gross: movie.gross,
+                imdbLink: movie.imdbLink,
+                metaScore: movie.metaScore,
+                numVotes: movie.numVotes,
+                overview: movie.overview,
+                runtime: movie.runtime,
+                star1: movie.star1,
+                star2: movie.star2,
+                star3: movie.star3,
+                star4: movie.star4,
              }),
              [`Rated.genres.${genres}`]: firebase.firestore.FieldValue.increment(1),
         })
@@ -91,9 +114,10 @@ function RateMovies() {
         movie = popularMovies[index];
     }
 
-
+    
     return (
         <div class="rate-background">
+
             <div className="rate-title"> {movie?.movieTitle} </div>
             <div className="rate-year"> {movie?.movieYear} </div>
             <br/>
@@ -101,7 +125,7 @@ function RateMovies() {
             <button onClick={dislikedMovie}> Disike</button>
             <br/>
             <br/>
-            <img class="rate-image" src = {`${movie?.moviePoster}`} />
+            <img class="rate-image" src={`${movie?.moviePoster}`} />
             
         </div>
     )
