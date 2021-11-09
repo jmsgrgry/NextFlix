@@ -4,6 +4,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/database';
 import 'firebase/compat/auth';
 
+
 firebase.initializeApp({
   apiKey: "AIzaSyA6M7L0B9zGoMGLWZ4mvx7_6elWbDrmKjM",
   authDomain: "nextflix-96831.firebaseapp.com",

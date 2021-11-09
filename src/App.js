@@ -55,8 +55,8 @@ function App() {
     <div className="App">
       <Navbar />
       <header>
-        <img className="logo_main" src={logo} />
-        <SignOut />
+        {/* <img className="logo_main" src={logo} /> */}
+        {/* <SignOut /> */}
       </header>
 
       <section>
