@@ -238,6 +238,10 @@ const SuggestedMovies = () => {
                 <img class="top-suggested-poster" src={popularMovies[idxlist[4]]?.moviePoster}/>
                 <div class="top-suggested-filter"></div>
                 <div class="top-sugested-title"> {popularMovies[idxlist[4]]?.movieTitle} </div>
+                <div class="top-sugested-summary"> {popularMovies[idxlist[4]]?.overview} </div>
+                <div class="top-sugested-genres"> {popularMovies[idxlist[4]]?.movieGenre} </div>
+                <div class="top-sugested-stars"> Starring: {popularMovies[idxlist[4]]?.star1} ⦁ {popularMovies[idxlist[4]]?.star2} ⦁ {popularMovies[idxlist[4]]?.star3} </div>
+                <div class="top-sugested-director"> Directed by {popularMovies[idxlist[4]]?.director} </div>
                 <button class="MenuButton" onClick={addMovie4}> Add to Playlist</button>
             </div>
             
@@ -246,6 +250,10 @@ const SuggestedMovies = () => {
                     <img class="suggested-option-poster" src={popularMovies[idxlist[0]]?.moviePoster} />
                     <div class="suggested-title"> {popularMovies[idxlist[0]]?.movieTitle} </div>
                     <div className="desc"> 
+                        <div class="suggested-desc"> Summary: {popularMovies[idxlist[0]]?.overview} </div>
+                        <div class="suggested-desc"> Director: {popularMovies[idxlist[0]]?.director} </div>
+                        <div class="suggested-desc"> Year: {popularMovies[idxlist[0]]?.movieYear} </div>
+                        <div class="suggested-desc"> Starring: {popularMovies[idxlist[0]]?.star1} ⦁ {popularMovies[idxlist[0]]?.star2} ⦁ {popularMovies[idxlist[0]]?.star3} </div>
                         <button class="btn_add" onClick={addMovie0}> Add to Playlist</button>
                     </div>
                 </div>
@@ -253,6 +261,10 @@ const SuggestedMovies = () => {
                     <img class="suggested-option-poster" src={popularMovies[idxlist[1]]?.moviePoster}/>
                     <div class="suggested-title"> {popularMovies[idxlist[1]]?.movieTitle} </div>
                     <div className="desc"> 
+                        <div class="suggested-desc"> Summary: {popularMovies[idxlist[1]]?.overview} </div>
+                        <div class="suggested-desc"> Director: {popularMovies[idxlist[1]]?.director} </div>
+                        <div class="suggested-desc"> Year: {popularMovies[idxlist[1]]?.movieYear} </div>
+                        <div class="suggested-desc"> Starring: {popularMovies[idxlist[1]]?.star1} ⦁ {popularMovies[idxlist[1]]?.star2} ⦁ {popularMovies[idxlist[1]]?.star3} </div>
                         <button class="btn_add" onClick={addMovie1}> Add to Playlist</button>
                     </div>
                 </div>
@@ -260,13 +272,21 @@ const SuggestedMovies = () => {
                     <img class="suggested-option-poster" src={popularMovies[idxlist[2]]?.moviePoster}/>
                     <div class="suggested-title"> {popularMovies[idxlist[2]]?.movieTitle} </div>
                     <div className="desc"> 
+                        <div class="suggested-desc"> Summary: {popularMovies[idxlist[2]]?.overview} </div>
+                        <div class="suggested-desc"> Director: {popularMovies[idxlist[2]]?.director} </div>
+                        <div class="suggested-desc"> Year: {popularMovies[idxlist[2]]?.movieYear} </div>
+                        <div class="suggested-desc"> Starring: {popularMovies[idxlist[2]]?.star1} ⦁ {popularMovies[idxlist[2]]?.star2} ⦁ {popularMovies[idxlist[2]]?.star3} </div>
                         <button class="btn_add" onClick={addMovie2}> Add to Playlist</button>
                     </div>
                 </div>
                 <div class="suggested-option">
                     <img class="suggested-option-poster" src={popularMovies[idxlist[3]]?.moviePoster}/>
-                    <div class="suggested-title"> {popularMovies[idxlist[3]]?.movieTitle} </div>
+                    <div class="suggested-title"> Summary: {popularMovies[idxlist[3]]?.movieTitle} </div>
                     <div className="desc"> 
+                        <div class="suggested-desc"> {popularMovies[idxlist[3]]?.overview} </div>
+                        <div class="suggested-desc"> Director: {popularMovies[idxlist[3]]?.director} </div>
+                        <div class="suggested-desc"> Year: {popularMovies[idxlist[3]]?.movieYear} </div>
+                        <div class="suggested-desc"> Starring: {popularMovies[idxlist[3]]?.star1} ⦁ {popularMovies[idxlist[3]]?.star2} ⦁ {popularMovies[idxlist[3]]?.star3} </div>
                         <button class="btn_add" onClick={addMovie3}> Add to Playlist</button>
                     </div>
                 </div>
