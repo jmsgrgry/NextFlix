@@ -9,7 +9,7 @@ const Menu = () => {
             <h1></h1>
             <Link to="/UserPlaylist"><button class="MenuButton" role="button">User Playlist</button></Link>
             <h1></h1>
-            <Link to="/SuggestedMovies"><button class="MenuButton" role="button">Suggested Movies</button></Link>
+            <Link to="/Recommendations"><button class="MenuButton" role="button">Suggested Movies</button></Link>
             <h1></h1>
             <Link to="/"><button class="MenuButton" role="button">Rate Movies</button></Link>
             <h1></h1>

@@ -9,7 +9,7 @@ import Navbar from './Navbar/NavbarElements';
 
 import Menu from './Menu/Menu';
 import UserPlaylist from './Menu/UserPlaylist';
-import SuggestedMovies from './Menu/SuggestedMovies';
+import Recommendations from './Menu/Recommendations';
 import './Menu/Menu.css';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -71,8 +71,8 @@ function App() {
             {user ? <UserPlaylist /> : <video autoPlay playsinline poster={landingImage} src={landingVideo}></video>}
             <div id = "playlist"></div>
           </Route>
-          <Route exact path="/SuggestedMovies">
-            {user ? <SuggestedMovies /> : <video autoPlay playsinline poster={landingImage} src={landingVideo}></video>}
+          <Route exact path="/Recommendations">
+            {user ? <Recommendations /> : <video autoPlay playsinline poster={landingImage} src={landingVideo}></video>}
           </Route>
         </Switch>
       </section>

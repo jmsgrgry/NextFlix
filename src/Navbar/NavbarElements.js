@@ -6,7 +6,7 @@ import SignOut from '../SignOut';
 import RateMovies from '../RateMovies';
 import Menu from '../Menu/Menu';
 import UserPlaylist from '../Menu/UserPlaylist';
-import SuggestedMovies from '../Menu/SuggestedMovies';
+import Recommendations from '../Menu/Recommendations';
 import '../Menu/Menu.css';
 
 import firebase from 'firebase/compat/app';
@@ -32,56 +32,21 @@ const Navbar = () => {
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           {user ? 
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="/">Home</a>
+              <li class="nav-item">
+                <a class="nav-link" href="/">Rate Movies</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/Menu">User Page</a>
+                <a class="nav-link" href="/Recommendations">Recommendations</a>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">User Profile</a>
-                  <a class="dropdown-item" href="/UserPlaylist">User Playlist</a>
-                  <a class="dropdown-item" href="/SuggestedMovies">Recommendations</a>
-                  <a class="dropdown-item" href="/">Rate Movies</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Settings</a>
-                </div>
+              <li class="nav-item">
+                <a class="nav-link" href="/UserPlaylist">Playlists</a>
               </li>
-              {/* <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-              </li> */}
+              <li class="nav-item">
+                <a class="nav-link" href="#">User Profile</a>
+              </li>
             </ul>
           : <SignIn /> }
-
-
-          {/* <section>
-            <Switch>
-              <Route exact path="/">
-                {user ? <RateMovies /> : <SignIn />}
-              </Route>
-              <Route exact path="/Menu">
-                {user ? <Menu /> : <SignIn />}
-              </Route>
-              <Route exact path="/UserPlaylist">
-                {user ? <UserPlaylist /> : <SignIn />}
-                <div id = "playlist"></div>
-              </Route>
-              <Route exact path="/SuggestedMovies">
-                {user ? <SuggestedMovies /> : <SignIn />}
-              </Route>
-            </Switch>
-          </section> */}
-
-
-          {/* <form class="form-inline my-2 my-lg-0" method="POST" action="SearchBar.js">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form> */}
-
+          
           <SignOut />
 
         </div>

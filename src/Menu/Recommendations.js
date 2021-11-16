@@ -6,7 +6,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/database';
 import 'firebase/firestore';
 
-const SuggestedMovies = () => {
+const Recommendations = () => {
 
     const popularMoviesRef = firebase.database().ref("/popular_movies");
     const [popularMovies, setPopularMovies] = React.useState([]);
@@ -226,7 +226,7 @@ const SuggestedMovies = () => {
     }
 
     return (
-        <div id="SuggestedMovies">
+        <div id="Recommendations">
             {/* <h1 id="MenuTitle">Suggested Movies</h1> */}
             {/* <Link to="/Menu"><button class="MenuButton" role="button">Menu</button></Link> */}
             
@@ -281,9 +281,9 @@ const SuggestedMovies = () => {
                 </div>
                 <div class="suggested-option">
                     <img class="suggested-option-poster" src={popularMovies[idxlist[3]]?.moviePoster}/>
-                    <div class="suggested-title"> Summary: {popularMovies[idxlist[3]]?.movieTitle} </div>
+                    <div class="suggested-title"> {popularMovies[idxlist[3]]?.movieTitle} </div>
                     <div className="desc"> 
-                        <div class="suggested-desc"> {popularMovies[idxlist[3]]?.overview} </div>
+                        <div class="suggested-desc"> Summary: {popularMovies[idxlist[3]]?.overview} </div>
                         <div class="suggested-desc"> Director: {popularMovies[idxlist[3]]?.director} </div>
                         <div class="suggested-desc"> Year: {popularMovies[idxlist[3]]?.movieYear} </div>
                         <div class="suggested-desc"> Starring: {popularMovies[idxlist[3]]?.star1} ⦁ {popularMovies[idxlist[3]]?.star2} ⦁ {popularMovies[idxlist[3]]?.star3} </div>
@@ -296,4 +296,4 @@ const SuggestedMovies = () => {
     )
 }
 
-export default SuggestedMovies
+export default Recommendations
