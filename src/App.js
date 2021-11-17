@@ -1,8 +1,6 @@
 // import React, { useRef, useState } from 'react';
-import React, {useRef, useState,useEffect} from 'react';
+import React, {useState,useEffect} from 'react';
 import './App.css';
-import SignIn from './SignIn';
-import SignOut from './SignOut';
 import RateMovies from './RateMovies';
 import Navbar from './Navbar/NavbarElements';
 // import PreLoader from './PreLoader';
@@ -12,14 +10,12 @@ import UserPlaylist from './Menu/UserPlaylist';
 import Recommendations from './Menu/Recommendations';
 import './Menu/Menu.css';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import { Link } from 'react-router-dom';
 
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 import landingVideo from './assets/landing-video.mp4';
 import landingImage from './assets/landing-page.png';

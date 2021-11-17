@@ -11,6 +11,7 @@ const Recommendations = () => {
     const popularMoviesRef = firebase.database().ref("/popular_movies");
     const [popularMovies, setPopularMovies] = React.useState([]);
     var [render, setRender] = React.useState(1);
+
     useEffect(() => {
         popularMoviesRef.once("value").then(function(snapshot){
             var newArray = []
@@ -40,7 +41,7 @@ const Recommendations = () => {
             });
             setPopularMovies([...popularMovies, ...newArray])
         });
-    }, [render]);
+    }, [0]);
     
     const idxlist = [];
     for (var i = 0; i < 10; i++) {
@@ -56,8 +57,6 @@ const Recommendations = () => {
     const auth = firebase.auth();
     var db = firebase.firestore();
     var user_id = auth.currentUser.uid;
-
-    console.log(movie);
 
     function addMovie0() {
 
