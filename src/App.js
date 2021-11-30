@@ -5,6 +5,7 @@ import SignIn from './SignIn';
 import SignOut from './SignOut';
 import RateMovies from './RateMovies';
 import Navbar from './Navbar/NavbarElements';
+import SearchBar from './Menu/SearchBar';
 // import PreLoader from './PreLoader';
 
 import Menu from './Menu/Menu';
@@ -73,6 +74,9 @@ function App() {
           </Route>
           <Route exact path="/SuggestedMovies">
             {user ? <SuggestedMovies /> : <video autoPlay playsinline poster={landingImage} src={landingVideo}></video>}
+          </Route>
+          <Route exact path="/SearchBar">
+            {user ? <SearchBar /> : <video autoPlay playsinline poster={landingImage} src={landingVideo}></video>}
           </Route>
         </Switch>
       </section>

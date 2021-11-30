@@ -13,6 +13,8 @@ const Menu = () => {
             <h1></h1>
             <Link to="/"><button class="MenuButton" role="button">Rate Movies</button></Link>
             <h1></h1>
+            <Link to="/SearchBar"><button class="MenuButton" role="button">Search Movies</button></Link>
+            <h1></h1>
             <Link to="/"><button class="MenuButton" role="button">Settings</button></Link>
         </div>
     )
