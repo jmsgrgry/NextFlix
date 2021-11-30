@@ -7,7 +7,7 @@ import RateMovies from '../RateMovies';
 import Menu from '../Menu/Menu';
 import UserPlaylist from '../Menu/UserPlaylist';
 import SuggestedMovies from '../Menu/SuggestedMovies';
-import SearchBar from '../SearchBar';
+import SearchBar from '../Menu/SearchBar';
 import '../Menu/Menu.css';
 
 import firebase from 'firebase/compat/app';
