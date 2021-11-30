@@ -82,7 +82,7 @@ function SearchBar(props) {
         var html = "<div class='suggested-option'>"
         html +=  "<img class='suggested-option-poster' src=" + allMovies[mov]?.moviePoster + "/>"
         html += "<div class='suggested-title'>" + allMovies[mov]?.movieTitle + "</div>"
-        html += "<button class='MenuButton' onClick={() => " + addMovie(mov) + "}> Add to Playlist</button> </div>"
+        html += "<button class='MenuButton' onClick={" + addMovie(mov) + "}> Add to Playlist</button> </div>"
         document.getElementById("searchResult").innerHTML = html
     }
     const auth = firebase.auth();
@@ -92,32 +92,33 @@ function SearchBar(props) {
     function addMovie(mov) {
         var movie = allMovies[mov]
         var genres = movie.movieGenre.split(',');
+        // console.log(movie);
 
-        db.collection('users').doc(user_id).update({
-            "Added.defaultPlaylist": firebase.firestore.FieldValue.arrayUnion({
-                key: movie.key, 
-                movieTitle: movie.movieTitle, 
-                moviePoster: movie.moviePoster, 
-                movieYear: movie.movieYear,
-                movieGenre: movie.movieGenre, 
-                movieRating: movie.movieRating,
-                director: movie.director,
-                // gross: movie.gross,
-                // imdbLink: movie.imdbLink,
-                // metaScore: movie.metaScore,
-                // numVotes: movie.numVotes,
-                // overview: movie.overview,
-                // runtime: movie.runtime,
-                // star1: movie.star1,
-                // star2: movie.star2,
-                // star3: movie.star3,
-                // star4: movie.star4,
-             }),
-             [`Added.genres.${genres}`]: firebase.firestore.FieldValue.increment(1),
-        })
-        .then(function(){
-            setRender(render + 1);
-        });
+        // db.collection('users').doc(user_id).update({
+        //     "Added.defaultPlaylist": firebase.firestore.FieldValue.arrayUnion({
+        //         key: movie.key, 
+        //         movieTitle: movie.movieTitle, 
+        //         moviePoster: movie.moviePoster, 
+        //         movieYear: movie.movieYear,
+        //         movieGenre: movie.movieGenre, 
+        //         movieRating: movie.movieRating,
+        //         director: movie.director,
+        //         // gross: movie.gross,
+        //         // imdbLink: movie.imdbLink,
+        //         // metaScore: movie.metaScore,
+        //         // numVotes: movie.numVotes,
+        //         // overview: movie.overview,
+        //         // runtime: movie.runtime,
+        //         // star1: movie.star1,
+        //         // star2: movie.star2,
+        //         // star3: movie.star3,
+        //         // star4: movie.star4,
+        //      }),
+        //      [`Added.genres.${genres}`]: firebase.firestore.FieldValue.increment(1),
+        // })
+        // .then(function(){
+        //     setRender(render + 1);
+        // });
     }
     
     
