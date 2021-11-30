@@ -7,6 +7,7 @@ import RateMovies from '../RateMovies';
 import Menu from '../Menu/Menu';
 import UserPlaylist from '../Menu/UserPlaylist';
 import SuggestedMovies from '../Menu/SuggestedMovies';
+import SearchBar from '../SearchBar';
 import '../Menu/Menu.css';
 
 import firebase from 'firebase/compat/app';
@@ -49,6 +50,16 @@ const Navbar = () => {
                   <a class="dropdown-item" href="/">Rate Movies</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#">Settings</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="/SearchBar">Search</a>
+
+
+                  {/* <div class="input-group mt-2 mx-2">
+                    <div class="form-outline">
+                      <input type="search" id="form1" class="form-control-dropdown" />
+                      <label class="form-label" for="form1">Search</label>
+                    </div>
+                  </div> */}
                 </div>
               </li>
               {/* <li class="nav-item">
@@ -56,25 +67,6 @@ const Navbar = () => {
               </li> */}
             </ul>
           : <SignIn /> }
-
-
-          {/* <section>
-            <Switch>
-              <Route exact path="/">
-                {user ? <RateMovies /> : <SignIn />}
-              </Route>
-              <Route exact path="/Menu">
-                {user ? <Menu /> : <SignIn />}
-              </Route>
-              <Route exact path="/UserPlaylist">
-                {user ? <UserPlaylist /> : <SignIn />}
-                <div id = "playlist"></div>
-              </Route>
-              <Route exact path="/SuggestedMovies">
-                {user ? <SuggestedMovies /> : <SignIn />}
-              </Route>
-            </Switch>
-          </section> */}
 
 
           {/* <form class="form-inline my-2 my-lg-0" method="POST" action="SearchBar.js">
