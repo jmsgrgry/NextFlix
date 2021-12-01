@@ -69,3 +69,11 @@
   margin-left: -100px;
   margin-bottom: 30px;
 }
+
+.profile-pic-header {
+  height: 10vh;
+  width: auto;
+  position: absolute;
+  right: 20px;
+}
+

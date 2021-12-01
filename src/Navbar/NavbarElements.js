@@ -10,6 +10,7 @@ import UserPlaylist from '../Menu/UserPlaylist';
 import SearchBar from '../Menu/SearchBar';
 import Recommendations from '../Menu/Recommendations';
 import '../Menu/Menu.css';
+import ProfilePic from './Profile/ProfilePic';
 
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
