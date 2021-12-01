@@ -33,6 +33,9 @@ function ProfilePic() {
   
   return (
     <div className="App">
+      <h1>Welcome to User Page</h1>
+      <h4 className="pf_text">Upload your profile picture</h4> 
+      <br />
       <center>
       <input type="file" onChange={(e)=>{setImage(e.target.files[0])}}/>
       <button onClick={upload}>Upload</button>
