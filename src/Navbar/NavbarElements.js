@@ -6,6 +6,8 @@ import SignOut from '../SignOut';
 import RateMovies from '../RateMovies';
 import Menu from '../Menu/Menu';
 import UserPlaylist from '../Menu/UserPlaylist';
+// import SuggestedMovies from '../Menu/SuggestedMovies';
+import SearchBar from '../Menu/SearchBar';
 import Recommendations from '../Menu/Recommendations';
 import '../Menu/Menu.css';
 
@@ -43,6 +45,9 @@ const Navbar = () => {
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/profile">User Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/SearchBar">Search</a>
               </li>
             </ul>
           : <SignIn /> }
