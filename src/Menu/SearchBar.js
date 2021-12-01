@@ -30,17 +30,17 @@ function SearchBar(props) {
                     movieYear: data.movie_year,
                     movieGenre: data.movie_genre, 
                     movieRating: data.imdb_rating,
-                    director: data.director,
-                    gross: data.gross,
+                    // director: data.director,
+                    // gross: data.gross,
                     imdbLink: data.imdb_link,
-                    metaScore: data.meta_score,
-                    numVotes: data.no_of_votes,
-                    overview: data.overview,
-                    runtime: data.Runtime,
-                    star1: data.star1,
-                    star2: data.star2,
-                    star3: data.star3,
-                    star4: data.star4,
+                    // metaScore: data.meta_score,
+                    // numVotes: data.no_of_votes,
+                    // overview: data.overview,
+                    // runtime: data.Runtime,
+                    // star1: data.star1,
+                    // star2: data.star2,
+                    // star3: data.star3,
+                    // star4: data.star4,
                 })
             });
 
@@ -51,7 +51,7 @@ function SearchBar(props) {
 
     var index = Math.floor(Math.random() * (1000 + 1));
     var movie = allMovies[index];
-    console.log(movie);
+    // console.log(movie);
 
     const [value, setValue] = useState('');
     const [result, setResult] = useState([]);
@@ -92,33 +92,33 @@ function SearchBar(props) {
     function addMovie(mov) {
         var movie = allMovies[mov]
         var genres = movie.movieGenre.split(',');
-        // console.log(movie);
+        console.log("here:", mov);
 
-        // db.collection('users').doc(user_id).update({
-        //     "Added.defaultPlaylist": firebase.firestore.FieldValue.arrayUnion({
-        //         key: movie.key, 
-        //         movieTitle: movie.movieTitle, 
-        //         moviePoster: movie.moviePoster, 
-        //         movieYear: movie.movieYear,
-        //         movieGenre: movie.movieGenre, 
-        //         movieRating: movie.movieRating,
-        //         director: movie.director,
-        //         // gross: movie.gross,
-        //         // imdbLink: movie.imdbLink,
-        //         // metaScore: movie.metaScore,
-        //         // numVotes: movie.numVotes,
-        //         // overview: movie.overview,
-        //         // runtime: movie.runtime,
-        //         // star1: movie.star1,
-        //         // star2: movie.star2,
-        //         // star3: movie.star3,
-        //         // star4: movie.star4,
-        //      }),
-        //      [`Added.genres.${genres}`]: firebase.firestore.FieldValue.increment(1),
-        // })
-        // .then(function(){
-        //     setRender(render + 1);
-        // });
+        db.collection('users').doc(user_id).update({
+            "Added.defaultPlaylist": firebase.firestore.FieldValue.arrayUnion({
+                key: movie.key, 
+                movieTitle: movie.movieTitle, 
+                moviePoster: movie.moviePoster, 
+                movieYear: movie.movieYear,
+                movieGenre: movie.movieGenre, 
+                movieRating: movie.movieRating,
+                // director: movie.director,
+                // gross: movie.gross,
+                imdbLink: movie.imdbLink,
+                // metaScore: movie.metaScore,
+                // numVotes: movie.numVotes,
+                // overview: movie.overview,
+                // runtime: movie.runtime,
+                // star1: movie.star1,
+                // star2: movie.star2,
+                // star3: movie.star3,
+                // star4: movie.star4,
+             }),
+             [`Added.genres.${genres}`]: firebase.firestore.FieldValue.increment(1),
+        })
+        .then(function(){
+            setRender(render + 1);
+        });
     }
     
     
