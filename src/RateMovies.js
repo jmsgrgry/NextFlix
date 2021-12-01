@@ -5,6 +5,8 @@ import 'firebase/database';
 import 'firebase/firestore';
 import './Menu/Menu.css';
 import ReadMoviesDatabase from './ReadMoviesDatabase';
+import { useState } from 'react'
+import TinderCard from 'react-tinder-card'
 
 function RateMovies() {
 
@@ -14,10 +16,51 @@ function RateMovies() {
 
     var index = Math.floor(Math.random() * (1000 + 1));
     var movie = popularMovies[index];
+    const ddb = [
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+        { name: '1' },
+    ]
 
     const auth = firebase.auth();
     var db = firebase.firestore();
     var user_id = auth.currentUser.uid;
+
+    const characters = ddb
+    const [lastDirection, setLastDirection] = useState()
+
+    const swiped = (direction, nameToDelete) => {
+        console.log('removing: ' + nameToDelete)
+        setLastDirection(direction)
+    }
+
+    const outOfFrame = (name) => {
+        console.log(name + ' left the screen!')
+    }
 
     function likedMovie() {
 
@@ -75,6 +118,14 @@ function RateMovies() {
         index = Math.floor(Math.random() * (1000 + 1));
         movie = popularMovies[index];
     }
+    // if (lastDirection == 'left') {
+    //     setLastDirection('up')
+    //     dislikedMovie()
+    // }
+    // if (lastDirection == 'right') {
+    //     setLastDirection('up')
+    //     likedMovie()
+    // }
 
     
     return (
@@ -87,7 +138,15 @@ function RateMovies() {
             <button onClick={dislikedMovie}> Disike</button>
             <br/>
             <br/>
-            <img class="rate-image" src={`${movie?.moviePoster}`} />
+            <div className='cardContainer'>
+                {characters.map((character) =>
+                    <TinderCard className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
+                        <img class="rate-image card" src={`${movie?.moviePoster}`} />
+                    </TinderCard>
+                )}
+                {lastDirection ? <h2 className='infoText'>You swiped {lastDirection}</h2> : <h2 className='infoText' />}
+            </div>
+            {/* <img class="rate-image" src={`${movie?.moviePoster}`} /> */}
             
         </div>
     )
