@@ -37,7 +37,7 @@ const UserPlaylist = () => {
     console.log(getData)
 
     return (
-        <div id="SuggestedMovies">
+        <div id="Recommendations">
             <h1 id="MenuTitle">User Playlist</h1>
             {/* <Link to="/Menu"><button class="MenuButton" role="button">Menu</button></Link> */}
         </div>

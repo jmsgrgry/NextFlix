@@ -39,13 +39,14 @@
 }
 
 .btn_add{
-  margin-top: 5px;
+  margin-top: 4vh;
   margin-bottom: 5px;
   text-decoration: none;
   color: whitesmoke;
   border: 1px solid lightgray;
   background-color: inherit;
 }
+
 .btn_add:hover{
   font-weight: 500;
   border: 1px solid red;
@@ -61,7 +62,7 @@
   box-sizing:border-box;
   background:linear-gradient(to bottom right, red, black);
   line-height:0px;
-  height: auto;
+  height: 40vh;
   width: 21%;
   float: left;
   text-align: center;
@@ -72,7 +73,11 @@
   border-radius:4px;
 }	
 
-.suggested-option:hover{line-height:30px;font-size:16px;}
+.suggested-option:hover{
+  line-height:30px;
+  font-size:16px;
+  height: 83vh;
+}
 
 .suggested-option-poster{
   width: 18.5vh;
@@ -89,6 +94,15 @@
   padding: 7% 3% 0% 3%;
   color: white;
   font-weight: 700;
+  line-height: 100%;
+}
+
+.suggested-desc{
+  text-align: center;
+  width: auto;
+  height: auto;
+  padding: 7% 3% 0% 3%;
+  color: white;
   line-height: 100%;
 }
 
@@ -153,6 +167,70 @@
   z-index: 1;
   font-size: 20px;
   text-shadow: 2px 2px 4px black, 0 0 25px gray, 0 0 10px orange;
+}
+
+.top-sugested-summary{
+  text-align: center;
+  width: 30vw;
+  height: auto;
+  padding: 1.5% 1.5% 1.5% 1.5%;
+  color: white;
+  font-weight: 600;
+  line-height: 100%;
+  position: absolute;
+  top: 12vh;
+  right: 2vw;
+  z-index: 2;
+  font-size: 18px;
+  text-shadow: 2px 2px 4px black, 0 0 25px gray, 0 0 10px rgb(10, 9, 8);
+}
+
+.top-sugested-genres{
+  text-align: center;
+  width: 30vw;
+  height: auto;
+  padding: 1.5% 1.5% 1.5% 1.5%;
+  color: lightpink;
+  font-weight: 600;
+  line-height: 100%;
+  position: absolute;
+  top: 25vh;
+  right: 2vw;
+  z-index: 2;
+  font-size: 18px;
+  text-shadow: 2px 2px 4px black, 0 0 25px gray, 0 0 10px rgb(10, 9, 8);
+}
+
+.top-sugested-director{
+  text-align: center;
+  width: 30vw;
+  height: auto;
+  padding: 1.5% 1.5% 1.5% 1.5%;
+  color: white;
+  font-weight: 600;
+  line-height: 100%;
+  position: absolute;
+  top: 35vh;
+  right: 2vw;
+  z-index: 2;
+  font-size: 22px;
+  text-shadow: 2px 2px 4px black, 0 0 25px gray, 0 0 10px rgb(10, 9, 8);
+}
+
+.top-sugested-stars{
+  text-align: center;
+  width: 30vw;
+  height: auto;
+  padding: 1.5% 1.5% 1.5% 1.5%;
+  color: lightpink;
+  font-weight: 600;
+  line-height: 100%;
+  position: absolute;
+  top: 43vh;
+  right: 2vw;
+  z-index: 2;
+  font-size: 18px;
+  text-shadow: 2px 2px 4px black, 0 0 25px gray, 0 0 10px rgb(10, 9, 8);
 }
 
 .wrapper{
