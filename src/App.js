@@ -3,9 +3,11 @@ import React, {useState,useEffect} from 'react';
 import './App.css';
 import RateMovies from './RateMovies';
 import Navbar from './Navbar/NavbarElements';
+import SearchBar from './Menu/SearchBar';
 // import PreLoader from './PreLoader';
 
 import Menu from './Menu/Menu';
+import ProfilePic from './Navbar/Profile/ProfilePic';
 import UserPlaylist from './Menu/UserPlaylist';
 import Recommendations from './Menu/Recommendations';
 import './Menu/Menu.css';
@@ -60,15 +62,22 @@ function App() {
             {/* <Link to="/Menu"><button class="MenuButton" role="button">Menu</button></Link> */}
             {user ? <RateMovies /> : <video autoPlay playsinline poster={landingImage} src={landingVideo}></video>}
           </Route>
-          <Route exact path="/Menu">
-            {user ? <Menu /> : <video autoPlay playsinline poster={landingImage} src={landingVideo}></video>}
+          <Route exact path="/rate">
+            {/* <Link to="/Menu"><button class="MenuButton" role="button">Menu</button></Link> */}
+            {user ? <RateMovies /> : <video autoPlay playsinline poster={landingImage} src={landingVideo}></video>}
           </Route>
-          <Route exact path="/UserPlaylist">
+          <Route exact path="/profile">
+            {user ? <ProfilePic /> : <video autoPlay playsinline poster={landingImage} src={landingVideo}></video>}
+          </Route>
+          <Route exact path="/playlists">
             {user ? <UserPlaylist /> : <video autoPlay playsinline poster={landingImage} src={landingVideo}></video>}
             <div id = "playlist"></div>
           </Route>
-          <Route exact path="/Recommendations">
+          <Route exact path="/recommendations">
             {user ? <Recommendations /> : <video autoPlay playsinline poster={landingImage} src={landingVideo}></video>}
+          </Route>
+          <Route exact path="/SearchBar">
+            {user ? <SearchBar /> : <video autoPlay playsinline poster={landingImage} src={landingVideo}></video>}
           </Route>
         </Switch>
       </section>
