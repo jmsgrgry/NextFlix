@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import '../../App.css';
+import '../styles/App.css';
 import firebase from 'firebase/compat/app';
 import "firebase/compat/storage";
 import 'firebase/database';
 import 'firebase/firestore';
-import '../../Menu/Menu.css';
+import '../styles/Pages.css';
 
 const auth = firebase.auth();
 

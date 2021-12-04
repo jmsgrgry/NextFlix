@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import './App.css';
+import '../styles/App.css';
+// import '../styles/Pages.css';
 import firebase from 'firebase/compat/app';
 import 'firebase/database';
 import 'firebase/firestore';
-import './Menu/Menu.css';
-import ReadMoviesDatabase from './ReadMoviesDatabase';
+import ReadMoviesDatabase from '../components/ReadMoviesDatabase';
 import { useState } from 'react'
 import TinderCard from 'react-tinder-card'
 

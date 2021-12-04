@@ -1,5 +1,5 @@
 /* image css https://codepen.io/jmldias/pen/efvGx */
-#MenuTitle {
+/* #MenuTitle {
     color:white;
   }
 
@@ -36,7 +36,7 @@
 .MenuButton:not([disabled]):hover {
     box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem red, .125rem .125rem 1rem red;
     color: lightcoral;
-}
+} */
 
 .btn_add{
   margin-top: 4vh;
@@ -55,6 +55,10 @@
 .suggested-option:hover .desc {
   visibility:visible;
 }
+
+/*
+  RECOMMENDATION
+*/
 
 .suggested-option{
   margin: 2% 2% 2% 2%;
@@ -233,6 +237,43 @@
   text-shadow: 2px 2px 4px black, 0 0 25px gray, 0 0 10px rgb(10, 9, 8);
 }
 
+/*
+  RATE MOVIES
+*/
+
+img.rate-image {
+  height: 50%;
+  width: auto;
+  max-width: 30vh;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.rate-background{
+  background-image: linear-gradient(to right, red , lightgreen);
+  height: 100vh;
+  width: 100vw;
+  top: 0px;
+  position: absolute;
+  z-index: -1;
+}
+
+.rate-title{
+  color: white;
+  text-shadow: 2px 2px 4px black, 0 0 25px gray, 0 0 10px darkred;
+  font-weight: 700;
+  margin-top: 10vh;
+  font-size: 25px;
+}
+
+.rate-year{
+  color: white;
+  text-shadow: 0 0 10px yellow;
+  font-weight: 500;
+}
+
 .wrapper{
   margin-top: 40px;
 }
@@ -270,18 +311,6 @@
   height: 300px;
 }
 
-.card {
-  position: relative;
-  background-color: #fff;
-  width: 80vw;
-  max-width: 260px;
-  height: 300px;
-  box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.30);
-  border-radius: 20px;
-  background-size: cover;
-  background-position: center;
-}
-
 .cardContent {
   width: 100%;
   height: 100%;
@@ -303,6 +332,11 @@
   animation-name: popup;
   animation-duration: 800ms;
 }
+
+/*
+  SEARCH
+*/
+
 .searchbox {
   width: 30%;
   margin-top: 30px;

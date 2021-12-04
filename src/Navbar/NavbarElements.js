@@ -1,24 +1,13 @@
-// import React from 'react';
 import React, {useRef, useState,useEffect} from 'react';
 
-import SignIn from '../SignIn';
-import SignOut from '../SignOut';
-import RateMovies from '../RateMovies';
-import Menu from '../Menu/Menu';
-import UserPlaylist from '../Menu/UserPlaylist';
-// import SuggestedMovies from '../Menu/SuggestedMovies';
-import SearchBar from '../Menu/SearchBar';
-import Recommendations from '../Menu/Recommendations';
-import '../Menu/Menu.css';
-import ProfilePic from './Profile/ProfilePic';
-
+import SignIn from '../components/SignIn';
+import SignOut from '../components/SignOut';
+import '../styles/Pages.css';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 
 const auth = firebase.auth();
