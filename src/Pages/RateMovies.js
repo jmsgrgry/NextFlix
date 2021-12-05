@@ -162,7 +162,7 @@ function RateMovies() {
             <div>
                 <h1 id="likedAlert" class="likedAlert"></h1>   
                 <h1 id="dislikedAlert" class="dislikedAlert"></h1> 
-                <h1 id="skippedAlert" class="skippedAlert">SKIPPED</h1> 
+                <h1 id="skippedAlert" class="skippedAlert"></h1> 
             </div>          
         </div>
     )
