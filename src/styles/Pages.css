@@ -1,5 +1,5 @@
 /* image css https://codepen.io/jmldias/pen/efvGx */
-/* #MenuTitle {
+#MenuTitle {
     color:white;
   }
 
@@ -36,7 +36,7 @@
 .MenuButton:not([disabled]):hover {
     box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem red, .125rem .125rem 1rem red;
     color: lightcoral;
-} */
+}
 
 .btn_add{
   margin-top: 4vh;
@@ -279,6 +279,7 @@
   top: 0px;
   position: absolute;
   z-index: -1;
+  overflow: hidden;
 }
 
 .rate-title{
@@ -302,6 +303,8 @@
   width: auto;
   left: 0vw;
   z-index: -1;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: darkred;
 }
 
 .likedAlert{
@@ -317,6 +320,24 @@
   width: auto;
   right: 0vw;
   z-index: -1;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #6bb36b;
+}
+
+.skippedAlert{
+  position: absolute;
+  color: #C87748;
+  text-shadow: 1px 1px 20px #9E5E38;
+  font-weight: 700;
+  font-size: 8vh;
+  width: auto;
+  bottom:0%;
+  z-index: -1;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #9E5E38;
+  left: 1%;
+  right: 1%;
+  letter-spacing: 1vw;
 }
 
 .rate-year{

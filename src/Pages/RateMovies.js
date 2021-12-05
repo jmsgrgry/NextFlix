@@ -102,21 +102,31 @@ function RateMovies() {
         index = Math.floor(Math.random() * (1000 + 1));
         movie = popularMovies[index];
     }
+
+    function skipMovie() {
+        setRender(0);
+        index = Math.floor(Math.random() * (1000 + 1));
+        movie = popularMovies[index];
+    }
     
     if (lastDirection == 'left') {
         setLastDirection('l')
         dislikedMovie()
         document.getElementById('dislikedAlert').innerHTML = 'DISLIKED';
-    }
-    if (lastDirection == 'right') {
+    } else if (lastDirection == 'right') {
         setLastDirection('r')
         likedMovie()
-       document.getElementById('likedAlert').innerHTML = 'LIKED';        
+        document.getElementById('likedAlert').innerHTML = 'LIKED';        
+    } else if (lastDirection == 'down') {
+        setLastDirection('d')
+        skipMovie()
+        document.getElementById('skippedAlert').innerHTML = 'SKIPPED';        
     }
 
     setTimeout(() => {
         document.getElementById('likedAlert').innerHTML = '';
         document.getElementById('dislikedAlert').innerHTML = '';
+        document.getElementById('skippedAlert').innerHTML = '';  
       }, 1500);
 
       console.log(movie);
@@ -152,6 +162,7 @@ function RateMovies() {
             <div>
                 <h1 id="likedAlert" class="likedAlert"></h1>   
                 <h1 id="dislikedAlert" class="dislikedAlert"></h1> 
+                <h1 id="skippedAlert" class="skippedAlert">SKIPPED</h1> 
             </div>          
         </div>
     )
