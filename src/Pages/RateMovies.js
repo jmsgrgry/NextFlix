@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import '../styles/App.css';
-// import '../styles/Pages.css';
 import firebase from 'firebase/compat/app';
 import 'firebase/database';
 import 'firebase/firestore';
@@ -10,40 +9,27 @@ import TinderCard from 'react-tinder-card'
 
 function RateMovies() {
 
-    var [render, setRender] = React.useState(1);
+    var [render, setRender] = React.useState(0);
 
     var popularMovies = ReadMoviesDatabase();
 
     var index = Math.floor(Math.random() * (1000 + 1));
     var movie = popularMovies[index];
-    const ddb = [
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
-        { name: '1' },
+    const ddb = [{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
+        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
+        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
+        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
+        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
+        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
+        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
+        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
+        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
+        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
+        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
+        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
+        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
+        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
+        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
     ]
 
     const auth = firebase.auth();
@@ -54,21 +40,19 @@ function RateMovies() {
     const [lastDirection, setLastDirection] = useState()
 
     const swiped = (direction, nameToDelete) => {
-        console.log('removing: ' + nameToDelete)
         setLastDirection(direction)
     }
 
     const outOfFrame = (name) => {
-        console.log(name + ' left the screen!')
     }
 
     function likedMovie() {
 
-        var genres = movie.movieGenre.split(',');
+        var genres = movie?.movieGenre?.split(',');
 
         db.collection('users').doc(user_id).update({
             "Rated.liked": firebase.firestore.FieldValue.arrayUnion({
-                key: movie.key, 
+                key: movie?.key, 
                 movieTitle: movie.movieTitle, 
                 moviePoster: movie.moviePoster, 
                 movieYear: movie.movieYear,
@@ -89,7 +73,7 @@ function RateMovies() {
              [`Rated.genres.${genres}`]: firebase.firestore.FieldValue.increment(1),
         })
         .then(function(){
-            setRender(render + 1);
+            setRender(0);
         });
 
         index = Math.floor(Math.random() * (1000 + 1));
@@ -98,7 +82,7 @@ function RateMovies() {
 
     function dislikedMovie() {
 
-        var genres = movie.movieGenre.split(',');
+        var genres = movie?.movieGenre?.split(',');
 
         db.collection('users').doc(user_id).update({
             "Rated.disliked": firebase.firestore.FieldValue.arrayUnion({
@@ -112,42 +96,63 @@ function RateMovies() {
              [`Rated.genres.${genres}`]: firebase.firestore.FieldValue.increment(-1),
         })
         .then(function(){
-            setRender(render + 1);
+            setRender(0);
         });
 
         index = Math.floor(Math.random() * (1000 + 1));
         movie = popularMovies[index];
     }
-    // if (lastDirection == 'left') {
-    //     setLastDirection('up')
-    //     dislikedMovie()
-    // }
-    // if (lastDirection == 'right') {
-    //     setLastDirection('up')
-    //     likedMovie()
-    // }
-
     
+    if (lastDirection == 'left') {
+        setLastDirection('l')
+        dislikedMovie()
+        document.getElementById('dislikedAlert').innerHTML = 'DISLIKED';
+    }
+    if (lastDirection == 'right') {
+        setLastDirection('r')
+        likedMovie()
+       document.getElementById('likedAlert').innerHTML = 'LIKED';        
+    }
+
+    setTimeout(() => {
+        document.getElementById('likedAlert').innerHTML = '';
+        document.getElementById('dislikedAlert').innerHTML = '';
+      }, 1500);
+
+      console.log(movie);
+      
     return (
         <div class="rate-background">
 
             <div className="rate-title"> {movie?.movieTitle} </div>
             <div className="rate-year"> {movie?.movieYear} </div>
+
             <br/>
-            <button onClick={likedMovie}> Like</button>
-            <button onClick={dislikedMovie}> Disike</button>
-            <br/>
-            <br/>
+            <img class="rate-image-shadow" src={`${movie?.moviePoster}`} />
             <div className='cardContainer'>
                 {characters.map((character) =>
                     <TinderCard className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
-                        <img class="rate-image card" src={`${movie?.moviePoster}`} />
+                        <img class="rate-image" src={`${movie?.moviePoster}`} />
                     </TinderCard>
                 )}
-                {lastDirection ? <h2 className='infoText'>You swiped {lastDirection}</h2> : <h2 className='infoText' />}
+                {/* {lastDirection == 'l' ?
+                        <div class="sp-container">
+                            <div class="sp-content">
+                                <h2 id="action" class="frame-1">DISLIKED</h2>
+                            </div>
+                        </div>
+                 : (lastDirection == 'r' ? 
+                        <div class="sp-container">
+                            <div class="sp-content">
+                                <h2 id="action" class="frame-1">LIKED</h2>
+                            </div>
+                        </div>
+                  : <h2/>)} */}
             </div>
-            {/* <img class="rate-image" src={`${movie?.moviePoster}`} /> */}
-            
+            <div>
+                <h1 id="likedAlert" class="likedAlert"></h1>   
+                <h1 id="dislikedAlert" class="dislikedAlert"></h1> 
+            </div>          
         </div>
     )
   

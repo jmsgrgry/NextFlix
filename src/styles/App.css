@@ -77,3 +77,51 @@
   right: 20px;
 }
 
+/* Rate Text Animation */
+
+.sp-content {
+  position: absolute;
+  left: 0px;
+  top: 80vh;
+  z-index: -1;
+  margin: auto;
+  left: 1%;
+  right: 1%;
+  position: absolute;
+}
+.sp-container h2 {
+  position: absolute;
+  top: 50%;
+  line-height: 100px;
+  height: 90px;
+  margin-top: -50px;
+  font-size: 50px;
+  width: 100%;
+  text-align: center;
+  color: transparent;
+  animation: blurFadeInOut 1.75s ease-in backwards infinite;
+}
+.sp-container h2.frame-1 {
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  -ms-animation-delay: 0s;
+  animation-delay: 0s;
+}
+
+@keyframes blurFadeInOut {
+  0% {
+    opacity: 0;
+    text-shadow: 0px 0px 40px #fff;
+    transform: scale(.7);
+  }
+  20%, 75% {
+    opacity: 1;
+    text-shadow: 0px 0px 1px #fff;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    text-shadow: 0px 0px 50px #fff;
+    transform: scale(0);
+  }
+}
