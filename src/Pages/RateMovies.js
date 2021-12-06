@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import '../styles/App.css';
 import firebase from 'firebase/compat/app';
 import 'firebase/database';
@@ -20,31 +20,12 @@ function RateMovies() {
         { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
         { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
         { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
-        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
-        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
-        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
-        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
-        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
-        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
-        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
-        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
-        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
-        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
+        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' }
     ]
 
     const auth = firebase.auth();
     var db = firebase.firestore();
     var user_id = auth.currentUser.uid;
-
-    const characters = ddb
-    const [lastDirection, setLastDirection] = useState()
-
-    const swiped = (direction, nameToDelete) => {
-        setLastDirection(direction)
-    }
-
-    const outOfFrame = (name) => {
-    }
 
     function likedMovie() {
 
@@ -108,28 +89,35 @@ function RateMovies() {
         index = Math.floor(Math.random() * (1000 + 1));
         movie = popularMovies[index];
     }
-    
-    if (lastDirection == 'left') {
-        setLastDirection('l')
-        dislikedMovie()
-        document.getElementById('dislikedAlert').innerHTML = 'DISLIKED';
-    } else if (lastDirection == 'right') {
-        setLastDirection('r')
-        likedMovie()
-        document.getElementById('likedAlert').innerHTML = 'LIKED';        
-    } else if (lastDirection == 'down') {
-        setLastDirection('d')
-        skipMovie()
-        document.getElementById('skippedAlert').innerHTML = 'SKIPPED';        
+
+    const characters = ddb
+    const [lastDirection, setLastDirection] = useState()
+
+    const inputLeft = React.useRef(null)
+    const inputRight = React.useRef(null)
+
+    const swiped = (direction, nameToDelete) => {
+        if (direction == 'left') {
+            inputLeft.current.click()
+            document.getElementById('dislikedAlert').innerHTML = 'DISLIKED';
+        } else if (direction == 'right') {
+            inputRight.current.click()
+            document.getElementById('likedAlert').innerHTML = 'LIKED';        
+        } else if (direction == 'down') {
+            skipMovie()
+            document.getElementById('skippedAlert').innerHTML = 'SKIPPED';        
+        }
+        setTimeout(() => {
+            document.getElementById('likedAlert').innerHTML = '';
+            document.getElementById('dislikedAlert').innerHTML = '';
+            document.getElementById('skippedAlert').innerHTML = '';  
+          }, 1500);
+
+        setLastDirection(direction)
     }
 
-    setTimeout(() => {
-        document.getElementById('likedAlert').innerHTML = '';
-        document.getElementById('dislikedAlert').innerHTML = '';
-        document.getElementById('skippedAlert').innerHTML = '';  
-      }, 1500);
-
-      console.log(movie);
+    const outOfFrame = (name) => {
+    }
       
     return (
         <div class="rate-background">
@@ -138,6 +126,8 @@ function RateMovies() {
             <div className="rate-year"> {movie?.movieYear} </div>
 
             <br/>
+            <button ref={inputRight} onClick={likedMovie} hidden> Like</button>
+            <button ref={inputLeft} onClick={dislikedMovie} hidden> Disike</button>
             <img class="rate-image-shadow" src={`${movie?.moviePoster}`} />
             <div className='cardContainer'>
                 {characters.map((character) =>
