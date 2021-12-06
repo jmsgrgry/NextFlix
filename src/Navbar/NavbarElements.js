@@ -37,7 +37,7 @@ const Navbar = () => {
                 <a class="nav-link" href="/profile">User Profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/SearchBar">Search</a>
+                <a class="nav-link" href="/search">Search</a>
               </li>
             </ul>
           : <SignIn /> }

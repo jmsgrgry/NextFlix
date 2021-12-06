@@ -31,8 +31,6 @@ const UserPlaylist = () => {
         // console.log("Document data:", doc.data().Rated);
     }
     })
-    
-    console.log(getData)
 
     return (
         <div id="Recommendations">
