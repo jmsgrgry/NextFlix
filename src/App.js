@@ -1,16 +1,13 @@
-// import React, { useRef, useState } from 'react';
 import React, {useState,useEffect} from 'react';
-import './App.css';
-import RateMovies from './RateMovies';
+import './styles/App.css';
+import './styles/Pages.css';
+import RateMovies from './Pages/RateMovies';
 import Navbar from './Navbar/NavbarElements';
-import SearchBar from './Menu/SearchBar';
-// import PreLoader from './PreLoader';
+import SearchBar from './components/SearchBar';
+import ProfilePic from './components/UploadProfilePic';
+import UserPlaylist from './Pages/UserPlaylist';
+import Recommendations from './Pages/Recommendations';
 
-import Menu from './Menu/Menu';
-import ProfilePic from './Navbar/Profile/ProfilePic';
-import UserPlaylist from './Menu/UserPlaylist';
-import Recommendations from './Menu/Recommendations';
-import './Menu/Menu.css';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import firebase from 'firebase/compat/app';

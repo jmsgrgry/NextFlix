@@ -1,10 +1,8 @@
-import './Menu.css';
-import { Link } from 'react-router-dom';
-
 import React, { useState, useEffect } from 'react';
 import firebase from 'firebase/compat/app';
 import 'firebase/database';
 import 'firebase/firestore';
+import '../styles/Pages.css';
 
 const Recommendations = () => {
 

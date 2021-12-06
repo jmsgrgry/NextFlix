@@ -1,10 +1,8 @@
-import './Menu.css';
-import { Link } from 'react-router-dom';
-
 import React, { useState, useEffect } from 'react';
 import firebase from 'firebase/compat/app';
 import 'firebase/database';
 import 'firebase/firestore';
+import '../styles/Pages.css';
 
 const UserPlaylist = () => {
 
@@ -17,15 +15,15 @@ const UserPlaylist = () => {
     if (doc.exists) {
 
         var html = "<div class='wrapper'><h1 id='MenuTitle'>Liked Movies</h1>"
-        for (var i = 0; i < doc.data().Rated?.liked.length; i++) {
+        for (var i = 0; i < doc.data().Rated?.liked?.length; i++) {
             html += "<img src=" + doc.data().Rated?.liked[i].moviePoster + "/>"
         }
         html += "<h1 id='MenuTitle'>Disliked Movies</h1>"
-        for (var i = 0; i < doc.data().Rated?.disliked.length; i++) {
+        for (var i = 0; i < doc.data().Rated?.disliked?.length; i++) {
             html += "<img src=" + doc.data().Rated?.disliked[i].moviePoster + "/>"
         }
         html += "<h1 id='MenuTitle'>Watch Later</h1>"
-        for (var i = 0; i < doc.data().Added?.defaultPlaylist.length; i++) {
+        for (var i = 0; i < doc.data().Added?.defaultPlaylist?.length; i++) {
             html += "<img src=" + doc.data().Added?.defaultPlaylist[i].moviePoster + "/>"
         }
         html += "</div>"

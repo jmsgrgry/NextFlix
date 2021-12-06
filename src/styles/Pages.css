@@ -56,6 +56,10 @@
   visibility:visible;
 }
 
+/*
+  RECOMMENDATION
+*/
+
 .suggested-option{
   margin: 2% 2% 2% 2%;
   padding:5px;
@@ -233,6 +237,115 @@
   text-shadow: 2px 2px 4px black, 0 0 25px gray, 0 0 10px rgb(10, 9, 8);
 }
 
+/*
+  RATE MOVIES
+*/
+
+.rate-image {
+  height: 60vh;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  background-size: cover;
+  background-position: center;
+  background-color: #fff;
+}
+
+.rate-image-shadow {
+  position: absolute;
+  height: 60vh;
+  width: auto;
+  min-width: 17vh;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 20px;
+  border: 1px solid #fff;
+  background-size: cover;
+  background-position: center;
+  background-color: #fff;
+  max-width: 1000px;
+  margin: auto;
+  left: 1%;
+  right: 1%;
+  position: absolute;
+  z-index: -1;
+}
+
+.rate-background{
+  background-image: linear-gradient(to right, red , lightgreen);
+  height: 100vh;
+  width: 100vw;
+  top: 0px;
+  position: absolute;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.rate-title{
+  color: white;
+  text-shadow: 2px 2px 4px black, 0 0 25px gray, 0 0 10px darkred;
+  font-weight: 700;
+  margin-top: 10vh;
+  font-size: 25px;
+}
+
+.dislikedAlert{
+  position: absolute;
+  top: 6.5vh;
+  color: red;
+  text-shadow: 1px 1px 35px black, 2px -3px 30px #353935;
+  font-weight: 700;
+  font-size: 7vh;
+  margin-top: 10vh;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  width: auto;
+  left: 0vw;
+  z-index: -1;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: darkred;
+}
+
+.likedAlert{
+  position: absolute;
+  top: 12vh;
+  color: lightgreen;
+  text-shadow: 1px 1px 30px #353935;
+  font-weight: 700;
+  font-size: 8vh;
+  margin-top: 10vh;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  width: auto;
+  right: 0vw;
+  z-index: -1;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #6bb36b;
+}
+
+.skippedAlert{
+  position: absolute;
+  color: #C87748;
+  text-shadow: 1px 1px 20px #9E5E38;
+  font-weight: 700;
+  font-size: 8vh;
+  width: auto;
+  bottom:0%;
+  z-index: -1;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #9E5E38;
+  left: 1%;
+  right: 1%;
+  letter-spacing: 1vw;
+}
+
+.rate-year{
+  color: white;
+  text-shadow: 0 0 10px yellow;
+  font-weight: 500;
+}
+
 .wrapper{
   margin-top: 40px;
 }
@@ -247,7 +360,7 @@
   box-shadow: 1px 1px 10px #999; 
   margin: 2px;
   height: 200px;
-  width: 135px;
+  width: 135;
   cursor: pointer;
   display:inline-block;
   *display:inline;
@@ -258,28 +371,17 @@
 }
 
 .swipe {
+  max-width: 60vh;
+  margin: auto;
+  left: 1%;
+  right: 1%;
   position: absolute;
-  top: 50%;  /* position the top  edge of the element at the middle of the parent */
-  left: 50%; /* position the left edge of the element at the middle of the parent */
-  transform: translate(-50%, -50%);
 }
 
 .cardContainer {
   width: 90vw;
   max-width: 260px;
   height: 300px;
-}
-
-.card {
-  position: relative;
-  background-color: #fff;
-  width: 80vw;
-  max-width: 260px;
-  height: 300px;
-  box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.30);
-  border-radius: 20px;
-  background-size: cover;
-  background-position: center;
 }
 
 .cardContent {
@@ -294,15 +396,10 @@
   color: #fff;
 }
 
-.infoText {
-  width: 100%;
-  height: 28px;
-  justify-content: center;
-  display: flex;
-  color: #fff;
-  animation-name: popup;
-  animation-duration: 800ms;
-}
+/*
+  SEARCH
+*/
+
 .searchbox {
   width: 30%;
   margin-top: 30px;

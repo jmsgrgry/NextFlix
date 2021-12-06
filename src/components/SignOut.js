@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import '../styles/App.css';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/database';
 import { Link } from 'react-router-dom';
