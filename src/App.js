@@ -7,6 +7,7 @@ import SearchBar from './components/SearchBar';
 import ProfilePic from './components/UploadProfilePic';
 import UserPlaylist from './Pages/UserPlaylist';
 import Recommendations from './Pages/Recommendations';
+import CreatePlaylist from './components/CreatePlaylist';
 
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
@@ -75,6 +76,9 @@ function App() {
           </Route>
           <Route exact path="/SearchBar">
             {user ? <SearchBar /> : <video autoPlay playsinline poster={landingImage} src={landingVideo}></video>}
+          </Route>
+          <Route exact path="/CreatePlaylist">
+            {user ? <CreatePlaylist /> : <video autoPlay playsinline poster={landingImage} src={landingVideo}></video>}
           </Route>
         </Switch>
       </section>
