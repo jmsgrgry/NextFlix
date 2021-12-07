@@ -9,13 +9,13 @@ import TinderCard from 'react-tinder-card'
 
 function RateMovies() {
 
-    var [render, setRender] = React.useState(0);
-
     var popularMovies = ReadMoviesDatabase();
 
     var index = Math.floor(Math.random() * (1000 + 1));
     var movie = popularMovies[index];
     const ddb = [{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
+        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
+        { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
         { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
         { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
         { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
@@ -34,31 +34,28 @@ function RateMovies() {
         db.collection('users').doc(user_id).update({
             "Rated.liked": firebase.firestore.FieldValue.arrayUnion({
                 key: movie?.key, 
-                movieTitle: movie.movieTitle, 
-                moviePoster: movie.moviePoster, 
-                movieYear: movie.movieYear,
-                movieGenre: movie.movieGenre, 
-                movieRating: movie.movieRating,
-                director: movie.director,
-                gross: movie.gross,
-                imdbLink: movie.imdbLink,
-                metaScore: movie.metaScore,
-                numVotes: movie.numVotes,
-                overview: movie.overview,
-                runtime: movie.runtime,
-                star1: movie.star1,
-                star2: movie.star2,
-                star3: movie.star3,
-                star4: movie.star4,
+                movieTitle: movie?.movieTitle, 
+                moviePoster: movie?.moviePoster, 
+                movieYear: movie?.movieYear,
+                movieGenre: movie?.movieGenre, 
+                movieRating: movie?.movieRating,
+                director: movie?.director,
+                gross: movie?.gross,
+                imdbLink: movie?.imdbLink,
+                metaScore: movie?.metaScore,
+                numVotes: movie?.numVotes,
+                overview: movie?.overview,
+                runtime: movie?.runtime,
+                star1: movie?.star1,
+                star2: movie?.star2,
+                star3: movie?.star3,
+                star4: movie?.star4,
              }),
              [`Rated.genres.${genres}`]: firebase.firestore.FieldValue.increment(1),
         })
         .then(function(){
-            setRender(0);
+            skipMovie();
         });
-
-        index = Math.floor(Math.random() * (1000 + 1));
-        movie = popularMovies[index];
     }
 
     function dislikedMovie() {
@@ -67,25 +64,32 @@ function RateMovies() {
 
         db.collection('users').doc(user_id).update({
             "Rated.disliked": firebase.firestore.FieldValue.arrayUnion({
-                key: movie.key, 
-                movieTitle: movie.movieTitle, 
-                moviePoster: movie.moviePoster, 
-                movieYear: movie.movieYear,
-                movieGenre: movie.movieGenre, 
-                movieRating: movie.movieRating,
+                key: movie?.key, 
+                movieTitle: movie?.movieTitle, 
+                moviePoster: movie?.moviePoster, 
+                movieYear: movie?.movieYear,
+                movieGenre: movie?.movieGenre, 
+                movieRating: movie?.movieRating,
+                director: movie?.director,
+                gross: movie?.gross,
+                imdbLink: movie?.imdbLink,
+                metaScore: movie?.metaScore,
+                numVotes: movie?.numVotes,
+                overview: movie?.overview,
+                runtime: movie?.runtime,
+                star1: movie?.star1,
+                star2: movie?.star2,
+                star3: movie?.star3,
+                star4: movie?.star4,
              }),
              [`Rated.genres.${genres}`]: firebase.firestore.FieldValue.increment(-1),
         })
         .then(function(){
-            setRender(0);
+            skipMovie();
         });
-
-        index = Math.floor(Math.random() * (1000 + 1));
-        movie = popularMovies[index];
     }
 
     function skipMovie() {
-        setRender(0);
         index = Math.floor(Math.random() * (1000 + 1));
         movie = popularMovies[index];
     }
@@ -112,11 +116,11 @@ function RateMovies() {
             document.getElementById('dislikedAlert').innerHTML = '';
             document.getElementById('skippedAlert').innerHTML = '';  
           }, 1500);
-
-        setLastDirection(direction)
     }
 
-    const outOfFrame = (name) => {
+    const outOfFrame = (direction, name) => {
+        setLastDirection(direction)
+        setLastDirection(0)
     }
       
     return (
@@ -135,19 +139,6 @@ function RateMovies() {
                         <img class="rate-image" src={`${movie?.moviePoster}`} />
                     </TinderCard>
                 )}
-                {/* {lastDirection == 'l' ?
-                        <div class="sp-container">
-                            <div class="sp-content">
-                                <h2 id="action" class="frame-1">DISLIKED</h2>
-                            </div>
-                        </div>
-                 : (lastDirection == 'r' ? 
-                        <div class="sp-container">
-                            <div class="sp-content">
-                                <h2 id="action" class="frame-1">LIKED</h2>
-                            </div>
-                        </div>
-                  : <h2/>)} */}
             </div>
             <div>
                 <h1 id="likedAlert" class="likedAlert"></h1>   

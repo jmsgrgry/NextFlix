@@ -66,6 +66,7 @@ function App() {
           </Route>
           <Route exact path="/profile">
             {user ? <ProfilePic /> : <video autoPlay playsinline poster={landingImage} src={landingVideo}></video>}
+            <div id = "profile-pic"></div>
           </Route>
           <Route exact path="/playlists">
             {user ? <UserPlaylist /> : <video autoPlay playsinline poster={landingImage} src={landingVideo}></video>}
@@ -74,7 +75,7 @@ function App() {
           <Route exact path="/recommendations">
             {user ? <Recommendations /> : <video autoPlay playsinline poster={landingImage} src={landingVideo}></video>}
           </Route>
-          <Route exact path="/SearchBar">
+          <Route exact path="/search">
             {user ? <SearchBar /> : <video autoPlay playsinline poster={landingImage} src={landingVideo}></video>}
           </Route>
           <Route exact path="/CreatePlaylist">
