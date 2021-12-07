@@ -48,7 +48,7 @@ const Recommendations = () => {
         idxlist.push(Math.floor(Math.random() * (1000 + 1)));
     }
     var index = Math.floor(Math.random() * (1000 + 1));
-    var movie = popularMovies[index];
+    var movie = popularMovies[idxlist[0]];
     var movie1 = popularMovies[idxlist[1]];
     var movie2 = popularMovies[idxlist[2]];
     var movie3 = popularMovies[idxlist[3]];
@@ -123,7 +123,7 @@ const Recommendations = () => {
         });
 
         index = Math.floor(Math.random() * (1000 + 1));
-        // movie1 = popularMovies[idxlist[1]];
+        movie1 = popularMovies[idxlist[1]];
     }
     function addMovie2() {
 
@@ -156,7 +156,7 @@ const Recommendations = () => {
         });
 
         index = Math.floor(Math.random() * (1000 + 1));
-        // movie2 = popularMovies[idxlist[2]];
+        movie2 = popularMovies[idxlist[2]];
     }
     function addMovie3() {
 
@@ -189,7 +189,7 @@ const Recommendations = () => {
         });
 
         index = Math.floor(Math.random() * (1000 + 1));
-        // movie3 = popularMovies[idxlist[3]];
+        movie3 = popularMovies[idxlist[3]];
     }
     function addMovie4() {
 
@@ -222,7 +222,7 @@ const Recommendations = () => {
         });
 
         index = Math.floor(Math.random() * (1000 + 1));
-        // movie4 = popularMovies[idxlist[4]];
+        movie4 = popularMovies[idxlist[4]];
     }
     
 
@@ -286,7 +286,7 @@ const Recommendations = () => {
                 <div class="top-sugested-genres"> {popularMovies[idxlist[4]]?.movieGenre} </div>
                 <div class="top-sugested-stars"> Starring: {popularMovies[idxlist[4]]?.star1} ⦁ {popularMovies[idxlist[4]]?.star2} ⦁ {popularMovies[idxlist[4]]?.star3} </div>
                 <div class="top-sugested-director"> Directed by {popularMovies[idxlist[4]]?.director} </div>
-                <button class="MenuButton" onClick={addMovie4}> Add to Playlist</button>
+                <button class="glow-on-hover" onClick={addMovie4}> Add to Playlist</button>
             </div>
             
             <div class = "imageList">
