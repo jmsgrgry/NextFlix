@@ -10,9 +10,33 @@ import TinderCard from 'react-tinder-card'
 function RateMovies() {
 
     var popularMovies = ReadMoviesDatabase();
+    const auth = firebase.auth();
+    var db = firebase.firestore();
+    var user_id = auth.currentUser.uid;
 
     var index = Math.floor(Math.random() * (1000 + 1));
     var movie = popularMovies[index];
+    
+
+    function repeatMovie(){
+        var docRef = db.collection("users").doc(user_id);
+    
+        var getData = docRef.get().then((doc) => {
+            if (doc.exists) {
+                for (var i = 0; i < doc.data().Rated?.liked?.length; i++) {
+                    if (movie.key == doc.data().Rated?.liked[i].key){
+                        skipMovie();
+                    }
+                } 
+                for (var i = 0; i < doc.data().Rated?.disliked?.length; i++) {
+                    if (movie.key == doc.data().Rated?.disliked[i].key){
+                        skipMovie();
+                    }
+                } 
+            }
+        })
+    }
+
     const ddb = [{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
         { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
         { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
@@ -22,10 +46,6 @@ function RateMovies() {
         { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },
         { name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' },{ name: '1' }
     ]
-
-    const auth = firebase.auth();
-    var db = firebase.firestore();
-    var user_id = auth.currentUser.uid;
 
     function likedMovie() {
 
@@ -55,6 +75,7 @@ function RateMovies() {
         })
         .then(function(){
             skipMovie();
+            repeatMovie();
         });
     }
 
@@ -86,6 +107,7 @@ function RateMovies() {
         })
         .then(function(){
             skipMovie();
+            repeatMovie();
         });
     }
 
@@ -122,6 +144,7 @@ function RateMovies() {
         setLastDirection(0)
     }
       
+
     return (
         <div class="rate-background">
 

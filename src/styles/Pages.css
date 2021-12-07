@@ -660,6 +660,7 @@ input[type="checkbox"]:focus {
   position: relative;
   z-index: 0;
   border-radius: 10px;
+  margin-bottom: 2vh;
 }
 
 .glow-on-hover:before {
