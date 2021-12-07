@@ -16,16 +16,16 @@ const UserPlaylist = () => {
     
     var playRef = db.collection("users").doc(user_id, "Added_Playlist");
     playRef.get().then(doc => {
-            if (doc && doc.exists) {
-                console.log(doc.id, '=>', doc.data());
-                let temp = doc.get('Added_Playlist');
-                playlist = temp;
-                // console.log(playlist);
-            }
-        })
-        .catch(err => {
-            console.log(err);
-        });
+        if (doc && doc.exists) {
+            console.log(doc.id, '=>', doc.data());
+            let temp = doc.get('Added_Playlist');
+            playlist = temp;
+            // console.log(playlist);
+        }
+    })
+    .catch(err => {
+        console.log(err);
+    });
 
     // var rootRef = firebase.database().ref();
     // var ref = rootRef.child("users", user_id, "Added_Playlist");

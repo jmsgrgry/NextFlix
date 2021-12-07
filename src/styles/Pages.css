@@ -426,3 +426,21 @@
 /* .searchbox.searchBack a, a:link, a:visited, a:hover, a:active {
   color: whitesmoke;
 } */
+
+.listdown{
+  /* visibility: hidden; */
+  list-style-type: none; 
+  padding: 0; 
+  margin: auto; 
+  /* margin-left: 110px; */
+  /* width: 120px; */
+  font-weight: 400;
+  text-align: center;
+  align-items: center;
+  border: 1px solid whitesmoke;
+  cursor: pointer;
+  text-decoration: none;
+}
+.listdown:hover{
+  color: gray;
+}
