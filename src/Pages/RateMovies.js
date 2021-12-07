@@ -101,6 +101,7 @@ function RateMovies() {
     const inputRight = React.useRef(null)
 
     const swiped = (direction, nameToDelete) => {
+        
         if (direction == 'left') {
             inputLeft.current.click()
             document.getElementById('dislikedAlert').innerHTML = 'DISLIKED';
@@ -111,14 +112,12 @@ function RateMovies() {
             skipMovie()
             document.getElementById('skippedAlert').innerHTML = 'SKIPPED';        
         }
-        setTimeout(() => {
-            document.getElementById('likedAlert').innerHTML = '';
-            document.getElementById('dislikedAlert').innerHTML = '';
-            document.getElementById('skippedAlert').innerHTML = '';  
-          }, 1500);
     }
 
     const outOfFrame = (direction, name) => {
+        document.getElementById('likedAlert').innerHTML = '';
+        document.getElementById('dislikedAlert').innerHTML = '';
+        document.getElementById('skippedAlert').innerHTML = '';  
         setLastDirection(direction)
         setLastDirection(0)
     }

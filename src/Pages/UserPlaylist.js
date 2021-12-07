@@ -34,7 +34,7 @@ const UserPlaylist = () => {
 
     return (
         <div id="Recommendations">
-            <h1 id="MenuTitle">User Playlist</h1>
+            <h1 id="MenuTitle">User Playlists</h1>
             {/* <Link to="/Menu"><button class="MenuButton" role="button">Menu</button></Link> */}
         </div>
     )
