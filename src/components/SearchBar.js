@@ -84,8 +84,10 @@ function SearchBar(props) {
         html += "<div class='suggested-desc'> Year: " + allMovies[mov]?.movieYear + " </div>"
         html += "<div class='suggested-desc'> Genre: " + allMovies[mov]?.movieGenre + " </div>"
         html += "<div class='suggested-desc'> Rating: " + allMovies[mov]?.movieRating + " </div>"
-        html += "<button class='btn_add' onClick={" + addMovie(mov) + "}> Add to Playlist</button> </div></div>"
+        html += "<button class='btn_add' id='btn_mov'> Add to Playlist</button> </div></div>"
         document.getElementById("searchResult").innerHTML = html
+        document.getElementById ("btn_mov").addEventListener ("click", addMovie(mov), false);
+
     }
     const auth = firebase.auth();
     var db = firebase.firestore();
@@ -120,11 +122,6 @@ function SearchBar(props) {
             <h1 id="searchTitle">Search for Movies</h1>
             <div className="searchbox">
                 <div className="input-group">
-                    {/* <input type="text" class="form-control rounded" placeholder="Search" aria-label="Search"
-                    aria-describedby="search-addon" 
-                    onChange={(event) => setValue(event.target.value)}
-                    value={value} 
-                    /> */}
                     <input type="text" className="searchBar" placeholder="Search" 
                     onChange={(event) => setValue(event.target.value)}
                     value={value} 
