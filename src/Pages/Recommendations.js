@@ -91,14 +91,13 @@ const Recommendations = () => {
         index = Math.floor(Math.random() * (1000 + 1));
         movie = popularMovies[idxlist[0]];
     }
-    function addMovie1(pl) {
-
+    function addMovie1() {
         var genres = movie?.movieGenre?.split(',');
-        var temp = "Added." + pl;
-        console.log(temp);
+        // var temp = {param: ("Added." + pl)};
+        // console.log(temp);
 
         db.collection('users').doc(user_id).update({
-           ("Added." + pl): firebase.firestore.FieldValue.arrayUnion({
+            "Added.defaultPlaylist" : firebase.firestore.FieldValue.arrayUnion({
                 key: movie1.key, 
                 movieTitle: movie1.movieTitle, 
                 moviePoster: movie1.moviePoster, 
@@ -226,34 +225,44 @@ const Recommendations = () => {
         // movie4 = popularMovies[idxlist[4]];
     }
     
-    var playlist = [];
-    var test = new Array();
-    var playRef = db.collection("users").doc(user_id, "Added_Playlist");
-    playRef.get().then(doc => {
-        if (doc && doc.exists) {
-            // console.log(doc.id, '=>', doc.data());
-            let temp = doc.get('Added_Playlist');
-            playlist = temp;
-            return playlist;
-        }
-    })
-    .catch(err => {
-        console.log(err);
-    });
 
-    var docRef = db.collection("users").doc(user_id);
-    var getData = docRef.get().then((doc) => {
-        if (doc.exists) {
-    
-            var html = "<div>"
-            html += "<button class='btn_add' onClick={"+ addMovie1('defaultPlaylist')+ "}>Default Playlist</li>"
-            for(var j = 0; j < playlist.length; j++){
-                html += "<button class='btn_add' onClick={"+ addMovie1(playlist[j])+ "}>"+playlist[j]+"</li>"
-            }
-            html += "</div>"
-            document.getElementById("listTemp").innerHTML = html
-        }
-    })        
+    // function addbtns(){
+    //     var playlist = [];
+    //     // var test = new Array();
+    //     var playRef = db.collection("users").doc(user_id, "Added_Playlist");
+    //     playRef.get().then(doc => {
+    //         if (doc && doc.exists) {
+    //             // console.log(doc.id, '=>', doc.data());
+    //             var temp = [];
+    //             temp = doc.get('Added_Playlist');
+    //             if(temp.length > 0){
+    //                 playlist = temp;
+    //             }
+    //         }
+    //     })
+    //     .catch(err => {
+    //         console.log(err);
+    //     });
+
+    //     var docRef = db.collection("users").doc(user_id);
+    //     var getData = docRef.get().then((doc) => {
+    //         if (doc.exists) {
+    //             var html = "<div>"
+    //             html += "<button class='btn_add' id='add_def'}>Default Playlist</li>"
+    //             for(var j = 0; j < playlist.length; j++){
+    //                 html += "<button className='btn_add' id='btn_pl'>" + playlist[j] + "</li>"
+    //             }
+    //             html += "</div>"
+    //             document.getElementById("listTemp").innerHTML = html
+    //             document.getElementById("add_def").addEventListener ("click", addMovie1('defaultPlaylist'), false);
+    //             if(document.getElementById("btn_pl").exists){
+    //                 for(var j = 0; j < playlist.length; j++){
+    //                     document.getElementById("btn_pl")[j].addEventListener ("click", addMovie1(playlist[j]), false);
+    //                 }
+    //             }
+    //         }
+    //     })        
+    // }
 
     const clickHandle = event => {
         event.preventDefault()
@@ -289,10 +298,12 @@ const Recommendations = () => {
                         <div class="suggested-desc"> Director: {popularMovies[idxlist[0]]?.director} </div>
                         <div class="suggested-desc"> Year: {popularMovies[idxlist[0]]?.movieYear} </div>
                         <div class="suggested-desc"> Starring: {popularMovies[idxlist[0]]?.star1} ⦁ {popularMovies[idxlist[0]]?.star2} ⦁ {popularMovies[idxlist[0]]?.star3} </div>
-                        <button class="btn_add"> Add to Playlist</button>
+                        <button class="btn_add" onClick={addMovie0}> Add to Playlist</button>
+                        {/* <button class="btn_add"> Add to Playlist</button> */}
+                        {/* <button class="btn_add" onClick={addbtns}> Add to Playlist</button> */}
                         {/* <Btn onClick={()=> setOpen(open => !open)} />
                         {open && <DropDown data ={sample} />} */}
-                        <div id="listTemp"></div>
+                        {/* <div id="listTemp"></div> */}
                         
                     </div>
                 </div>

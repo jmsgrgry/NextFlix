@@ -17,10 +17,13 @@ const UserPlaylist = () => {
     var playRef = db.collection("users").doc(user_id, "Added_Playlist");
     playRef.get().then(doc => {
         if (doc && doc.exists) {
-            console.log(doc.id, '=>', doc.data());
-            let temp = doc.get('Added_Playlist');
-            playlist = temp;
-            // console.log(playlist);
+            // console.log(doc.id, '=>', doc.data());
+            var temp = [];
+            temp = doc.get('Added_Playlist');
+            if(temp.length > 0){
+                playlist = temp;
+                // console.log(playlist);
+            }
         }
     })
     .catch(err => {
@@ -60,11 +63,13 @@ const UserPlaylist = () => {
         //     }
         // )
         for(var j = 0; j < playlist.length; j++){
-            html += "<h1 id='MenuTitle'>"+ playlist[j] + "</h1>"
-            // for(var i = 0; i < doc.data().Added?.playlist[j]?.length; i++) {
-            //     console.log("here");
-            //     // html += "<img src=" + doc.data().Added?.playlist[i][j].moviePoster + "/>"
-            // }s
+            // console.log(playlist[j])
+            var temp = playlist[j]
+            html += "<h1 id='MenuTitle'>"+ temp + "</h1>"
+            for(var i = 0; i < doc.data().Added?.temp?.length; i++) {
+                console.log("here");
+                html += "<img src=" + doc.data().Added?.playlist[j][i].moviePoster + "/>"
+            }
         }
  
         html += "</div>"
