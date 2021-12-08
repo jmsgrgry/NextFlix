@@ -64,13 +64,14 @@ function ProfilePic() {
             document.getElementById("checkbox").checked = "checked";
         }
     })
+    
     function handleUpload(e) {
         e.preventDefault();
         const ref = firebase.storage().ref(`profile_pics/${user_id}`);
         const uploadTask = ref?.put(file);
+        console.log(ref.getDownloadURL())
 
         var uploadedImage = URL.createObjectURL(file);
-        console.log(uploadedImage)
 
         uploadTask?.on("state_changed", console.log, console.error, () => {
         ref
@@ -78,10 +79,11 @@ function ProfilePic() {
                 .then((url) => {
                     setFile(null);
                     showCheck();
-                    
+                    setURL(url)
             });
         });
 
+        console.log(url)
         db.collection('users').doc(user_id).update({
             "Profile.picture": url,
         })
